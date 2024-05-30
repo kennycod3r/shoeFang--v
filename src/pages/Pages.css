@@ -1,0 +1,108 @@
+#Journal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primaryGreen);
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .journal-headtext {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .journal-header {
+    font-size: clamp(3.5rem, 1.3571rem + 5.5143vw, 6.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #242424;
+    letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  
+  .journal-intro {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .journal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .journal-article {
+    background-color: #f5f5f2;
+    padding: 2px;
+    position: relative;
+    border-radius: 10px;
+    height: auto;
+    display: grid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .journal-article p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+  .dateWrapper{
+      z-index: 1;
+      color: white;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      position: absolute;
+      top: .5rem;
+      left: .55rem;
+  }
+  
+  .dateWrapper p{
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background-color: rgba(0, 0, 0, 0.277);
+      font-size: small;
+      padding:0 3px;
+      border-radius: 5px;
+  }
+  .journal-article img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .journal-article h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  
+  
+  .j-art-text {
+    padding: 10px 1em;
+  }
+  
+  .journal-article .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primaryGreen);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  
+  @media only screen and (max-width: 650px) {
+    .journal-grid{
+      grid-template-columns: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .journal-article{
+      width: 20em;
+    }
+  }
+  

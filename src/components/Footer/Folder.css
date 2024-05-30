@@ -1,0 +1,88 @@
+.Homefooter {
+    position: relative;
+    min-height: 10vh;
+    padding: clamp(1em, 5vh, 5em);
+    background-color: #1d1d1b;
+    color: #e0e0e0;
+    list-style: none;
+  }
+  
+  .Homefooter h1, h2 {
+    font-weight: 400;
+    font-size: 3em;
+    line-height: 1.095;
+    margin-bottom: 10px;
+    color: inherit;
+  }
+  
+  .Homefooter h2{
+    font-size: 2.5em;
+  }
+  .newsletter-div input {
+    padding: 15px;
+    border: none;
+    outline: none;
+    width: calc(100% - 110px);
+    color: whitesmoke;
+    background-color: #333;
+    display: inline-block; /* Ensure input and button are on the same line */
+  }
+  
+  .newsletter-div button {
+    padding: 15px 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: -5px; /* Adjust margin to align with the input */
+    border: none;
+    font-weight: bold;
+    display: inline-block; /* Ensure input and button are on the same line */
+  }
+  
+  .footer-container {
+    display: grid;
+    border-top: 1px solid var(--linkColor);
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .footer-col {
+    padding: 20px 30px;
+    display: grid;
+    gap: 10px;
+  }
+  .f-title{
+    padding-top: 2em;
+    padding-left: 10px;
+  }
+  .aligned-paragraphs {
+    display: flex;
+    flex-direction: column; /* Arrange paragraphs vertically */
+    align-items: flex-start;
+    margin-bottom: 20px; /* Align items to the start of the container */
+  }
+  
+  .aligned-paragraphs p, .aligned-paragraphs li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .aligned-paragraphs li {
+    padding: 10px 0;
+    color: #ccc;
+    border-top: 1px solid var(--linkColor);
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    
+    .newsletter-div input, .newsletter-div button {
+        width: 100%; /* Full width on smaller screens */
+        margin: 5px 0; /* Margin adjustment for stacking */
+    }
+  }
+  

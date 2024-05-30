@@ -1,0 +1,73 @@
+.sidebar {
+  width: 25%;
+  position: fixed;
+  height: 100%;
+  border-right: 2px solid #e5e5e5;
+  z-index: 999;
+  background-color: #f5f5f2;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: 8fr 1fr;
+  box-shadow: var(--box-shadow);
+  transition: var(--animationSmooth);
+}
+
+.close-button {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 999;
+  transition: var(--animationSmooth);
+}
+
+.close-button:hover svg {
+  transform: scale(1.1);
+  color: rgb(181, 11, 11);
+}
+
+.sidebar ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 1em;
+}
+
+.sidebar li {
+  transition: all 0.1s cubic-bezier(0.7, 0, 0.3, 1);
+  width: 100%;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  color: var(--primaryGreen);
+  padding: 5px;
+  line-height: normal;
+  font-size: 27px;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.sidebar li:hover {
+  background-color: #2b2b2bee;
+  color: rgb(238, 238, 238);
+}
+
+.yeezy-nav img {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 650px) {
+  .sidebar {
+    width: 60%;
+  }
+  .close-button svg {
+    height: 50px;
+    width: 30px;
+  }
+}
+
+  

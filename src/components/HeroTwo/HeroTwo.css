@@ -1,0 +1,75 @@
+.hero2 {
+    padding: 3em 20px;
+    background-color: #2b30009d;
+  }
+  
+  .hero2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text-button-container {
+    padding: 2em;
+    background-color: var(--bodyColor);
+    border-radius: 3px;
+    min-width: 80%;
+    box-shadow: 0 0 10px rgba(211, 211, 211, 0.062);
+    margin-bottom: 2em;
+  }
+  
+  .text-button-container h2 {
+    text-transform: uppercase;
+    color: #3e3b34;
+    line-height: 1.1;
+    font-size: 3em;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    padding: 20px 0;
+  }
+  
+  .text-button-container span {
+    font-weight: 600;
+    color: #2b30009d;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .hero2-img-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .nikesvg {
+    height: 40px;
+  }
+  
+  .nikesvg-des {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    color: #6a6a6a;
+    margin-bottom: 5px;
+  }
+  
+  .pre-order {
+    color: var(--bodyColor);
+    font-weight: bold;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: normal;
+    text-decoration: underline;
+  }
+  
+  @media only screen and (max-width: 650px) {
+    .hero2-container {
+      display: block;
+    }
+  
+    .text-button-container h2 {
+      font-size: 2em;
+    }
+  }
+  
