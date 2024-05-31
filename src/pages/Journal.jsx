@@ -1,10 +1,10 @@
 import React from "react";
 import HeadText from "../components/HeadText/HeadText";
-import "./Pages.css";
 import { MdArrowOutward } from "react-icons/md";
 import { CiClock1 } from "react-icons/ci";
 import { FaFireAlt } from "react-icons/fa";
 import Footer from "../components/Footer/Footer";
+import "./Pages.css";
 
 export default function Journal() {
   const articles = [
@@ -45,7 +45,7 @@ export default function Journal() {
   return (
     <>
       <HeadText />
-      <div id="Journal">
+      <div id="journal">
         <div className="journal-headtext">
           <h1 className="journal-header">SNEAKER NEWS</h1>
         </div>
@@ -75,7 +75,7 @@ export default function Journal() {
               <div className="j-art-text">
                 <h2>{article.title}</h2>
                 <p>{article.excerpt}</p>
-                <a href={`/Journal/${index + 1}`} className="read-more">
+                <a href={`/journal/${index + 1}`} className="read-more">
                   Read more <MdArrowOutward />
                 </a>
               </div>

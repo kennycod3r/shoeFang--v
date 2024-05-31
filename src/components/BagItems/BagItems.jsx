@@ -1,34 +1,27 @@
-import ReactDOM from "react-dom";
-import "./BagItems.css";
 import React from "react";
+import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 import BagItem from "../../utility/BagItem";
 import { GiShoppingCart } from "react-icons/gi";
-import { Link } from "react-router-dom";
 import CloseButton from "../../utility/CloseButton";
+import "./BagItems.css";
 
-export default function BagItems({
-  total,
-  bagData,
-  bagOpen,
-  handleBagOpen,
-  handleRemoveBagItem,
-}) {
+const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem }) => {
   if (!bagOpen) return null;
 
   const bagSidebar = document.getElementById("bagSidebar");
-
   if (!bagSidebar) return null;
 
   return ReactDOM.createPortal(
-    <div className={`Bag-item-section`} style={{opacity: 1, animationDelay:"2ms"}}>
+    <div className="Bag-item-section" style={{ opacity: 1, animationDelay: "2ms" }}>
       {bagData.length > 0 ? (
         <>
           {bagData.map((item, index) => (
             <BagItem
+              key={index}
               newItemTitle={item.title}
               newItemPrevPrice={item.prevPrice}
               newItemPrice={item.newPrice}
-              key={Math.random() * index}
               handleBagOpen={handleBagOpen}
               bagData={bagData}
               imageUrl={item.imageUrl}
@@ -40,17 +33,11 @@ export default function BagItems({
       ) : (
         <div className="bag-empty">
           <CloseButton onClick={handleBagOpen} />
-
-          <div className="bag-empty-div purchase-img ">
+          <div className="bag-empty-div purchase-img">
             <GiShoppingCart className="bag-empty-cart" />
           </div>
           <p>Oops! Looks like your bag is empty.</p>
-
-          <Link
-            to={`/`}
-            className="cont-shopping btn-link"
-            onClick={handleBagOpen}
-          >
+          <Link to="/" className="cont-shopping btn-link" onClick={handleBagOpen}>
             CONTINUE SHOPPING
           </Link>
         </div>
@@ -61,9 +48,8 @@ export default function BagItems({
             <p>Subtotal</p>
             <p className="total-price">£{total}.00</p>
           </div>
-
           <button className="checkout-btn">
-            <Link to={`CheckOut/3`} className="btn-link">
+            <Link to="CheckOut/3" className="btn-link">
               CHECKOUT
             </Link>
           </button>
@@ -72,4 +58,6 @@ export default function BagItems({
     </div>,
     bagSidebar
   );
-}
+};
+
+export default BagItems;

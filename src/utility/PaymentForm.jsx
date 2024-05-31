@@ -40,20 +40,24 @@ const PaymentForm = () => {
     <>
       <label htmlFor="cardNumber">Payment Details</label>
       <input
+        id="cardNumber"
         name="cardNumber"
         type="text"
         placeholder="Card Number"
         value={paymentValues.cardNumber}
         onChange={handleChange}
+        autoComplete="cc-number"
       />
       <div style={{ display: "flex", gap: "10px" }}>
         <div>
           <label htmlFor="expiryMonth">Expiry Date (MM/YY)</label>
           <div style={{ display: "flex" }}>
             <select
+              id="expiryMonth"
               name="expiryMonth"
               value={paymentValues.expiryMonth}
               onChange={handleChange}
+              autoComplete="cc-exp-month"
             >
               <option value="">MM</option>
               {months.map((month) => (
@@ -64,11 +68,13 @@ const PaymentForm = () => {
             </select>
 
             <select
+              id="expiryYear"
               name="expiryYear"
               value={paymentValues.expiryYear}
               onChange={handleChange}
+              autoComplete="cc-exp-year"
             >
-              <option value="">YYYY</option>
+              <option value="">YY</option>
               {years.map((year) => (
                 <option key={year.value} value={year.value}>
                   {year.label}
@@ -81,10 +87,12 @@ const PaymentForm = () => {
         <div>
           <label htmlFor="cvv">CVV</label>
           <input
+            id="cvv"
             name="cvv"
             type="text"
             value={paymentValues.cvv}
             onChange={handleChange}
+            autoComplete="cc-csc"
           />
         </div>
       </div>

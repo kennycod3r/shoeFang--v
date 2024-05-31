@@ -1,36 +1,36 @@
-import React from "react";
-import Promo from "./Promo";
-import { useState } from "react";
-import "./HeadText.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Promo from "./Promo";
 import BagItems from "../BagItems/BagItems";
-import fangs from "../../assets/fangs.svg";
-import { AiOutlineUserAdd } from "react-icons/ai";
 import HamburgerMenu from '../../utility/HamburgerMenu';
+import { AiOutlineUserAdd } from "react-icons/ai";
+import fangs from "../../assets/fangs.svg";
+import "./HeadText.css";
 
-const HeadText = ({  handleSidebar, bagData, total, handleRemoveBagItem }) => {
+const HeadText = ({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
   const [bagOpen, setBagOpen] = useState(false);
 
-  function handleBagOpen() {
-    setBagOpen((prevState) => !prevState);
-  }
+  const handleBagOpen = () => {
+    setBagOpen(prevState => !prevState);
+  };
+
   return (
     <>
       <Promo />
       <div className="flexCenter outer-div">
         <div className="inner-div">
           <div className="div-one" id="sidebar">
-            <HamburgerMenu  onClick={handleSidebar} />
+            <HamburgerMenu onClick={handleSidebar} />
             <div className="show-mobile">
               <Link to="/Journal/1">JOURNAL</Link>
             </div>
             <div className="show-mobile">ABOUT</div>
-            {bagData ? (
+            {bagData && (
               <>
                 <div className="show-mobile">SALE</div>
                 <div className="show-mobile">SHOP</div>
               </>
-            ) : null}
+            )}
           </div>
 
           <div className="flexCenter div-two">
@@ -41,11 +41,11 @@ const HeadText = ({  handleSidebar, bagData, total, handleRemoveBagItem }) => {
           </div>
 
           <div className="div-one div-three">
-            {bagData ? (
+            {bagData && (
               <div className="flexSpaceBetween" onClick={handleBagOpen}>
-                BAG ({bagData ? bagData.length : null})
+                BAG ({bagData.length})
               </div>
-            ) : null}
+            )}
             <div className="show-mobile">ACCOUNT</div>
             <div className="acc-icon show-mobile">
               <AiOutlineUserAdd className="account-svg" />

@@ -1,18 +1,17 @@
-import AllCategoryCard from "../../utility/AllCategoryCard";
 import React from "react";
-import './AllCategory.css';
-import allcategorydata from "../../Data/allcategorydata";
+import AllCategoryCard from "../../utility/AllCategoryCard";
 import Sponsor from "../Sponsors/Sponsor";
+import allcategorydata from "../../Data/allcategorydata";
+import './AllCategory.css';
 
-export default function AllCategorySection({ handleBag }) {
+const AllCategorySection = ({ handleBag }) => {
   return (
     <>
-      <Sponsor/>
-      
+      <Sponsor />
       <div className="category-section">
-        {allcategorydata.map((item) => (
+        {allcategorydata.map(item => (
           <AllCategoryCard
-            key={item.description}
+            key={item.id}
             image={item.img}
             title={item.title}
             newPrice={item.newPrice}
@@ -25,4 +24,6 @@ export default function AllCategorySection({ handleBag }) {
       </div>
     </>
   );
-}
+};
+
+export default AllCategorySection;

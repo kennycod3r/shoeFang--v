@@ -1,12 +1,10 @@
-
 .hero {
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background: url("C:\Users\KENNY\shoefang\src\assets\nike.svg")
-      center/contain repeat,
+  background: url("C:/Users/KENNY/shoefang/src/assets/nike.svg") center/cover no-repeat,
     var(--background-color) !important;
   background-blend-mode: var(--background-blend);
 }
@@ -45,6 +43,7 @@
 .relative-img {
   position: relative;
 }
+
 .reminder-container p {
   position: absolute;
   bottom: 3.5%;
@@ -67,15 +66,18 @@
   .hero-sales-text p {
     text-align: left;
   }
+
   .hero-inner-section {
     display: block;
   }
-  .article{
+
+  .article {
     line-height: normal;
     padding: 0;
-    border-bottom: black;
+    border-bottom: none;
     text-decoration: none;
   }
+
   .hero-inner-section {
     color: var(--text-color);
     height: auto;

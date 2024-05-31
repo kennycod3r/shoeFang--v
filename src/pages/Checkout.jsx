@@ -1,12 +1,11 @@
+import React, { useState } from "react";
 import HeadText from "../components/HeadText/HeadText";
-import React from "react";
 import PaymentForm from "../utility/PaymentForm";
-import { useState } from "react";
 import Footer from "../components/Footer/Footer";
 
 export default function Checkout() {
   const [formValues, setFormValues] = useState({
-    Address: "",
+    address: "",
     zipCode: "",
   });
 
@@ -20,15 +19,13 @@ export default function Checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Checkout Info:", formValues);
     setFormValues({
-      Address: "",
+      address: "",
       zipCode: "",
     });
-    console.log("Checkout Info:", formValues);
   };
-  {
-    /*className="checkout-form-inner"*/
-  }
+
   return (
     <>
       <HeadText />
@@ -36,7 +33,7 @@ export default function Checkout() {
         <h3 className="headtext-small">Checkout</h3>
         <p className="light-grey small">home/cart/checkout</p>
         <div className="checkout-form-inner">
-        <div className="checkout-col">
+          <div className="checkout-col">
             <div className="checkout-card">
               <div className="checkout-card-details">
                 <h3 className="headtext-small">Nike React Infinity</h3>
@@ -51,68 +48,7 @@ export default function Checkout() {
                 />
               </div>
             </div>
-            <div className="checkout-card">
-              <ul className="checkout-card-details">
-                <h3 className="headtext-small">Nike React Infinity</h3>
-                <li>
-                  <p>Size: 42</p>
-                </li>
-                <li>
-                  <p>QTY: 1</p>
-                </li>
-                <li>
-                  <p className="light-grey small">Details</p>
-                </li>
-              </ul>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large"
-                  alt="shoe"
-                />
-              </div>
-            </div>
-            <div className="checkout-card ">
-              <div className="checkout-card-details">
-                <h3 className="headtext-small">Nike React Infinity</h3>
-                <p>Size: 42</p>
-                <p>QTY: 1</p>
-                <p className="light-grey small">Details</p>
-              </div>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large"
-                  alt="shoe"
-                />
-              </div>
-            </div>
-            <div className="checkout-card">
-              <div className="checkout-card-details">
-                <h3 className="headtext-small">Nike React Infinity</h3>
-                <p>Size: 42</p>
-                <p>QTY: 1</p>
-                <p className="light-grey small">Details</p>
-              </div>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large"
-                  alt="shoe"
-                />
-              </div>
-            </div>
-            <div className="checkout-card white-overlay">
-              <div className="checkout-card-details">
-                <h3 className="headtext-small">Nike React Infinity</h3>
-                <p>Size: 42</p>
-                <p>QTY: 1</p>
-                <p className="light-grey small">Details</p>
-              </div>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large"
-                  alt="shoe"
-                />
-              </div>
-            </div>
+            {/* Additional checkout cards can be added here */}
           </div>
           <div className="checkout-col">
             <ul className="white-overlay">
@@ -132,28 +68,31 @@ export default function Checkout() {
                 <p>Nike React infinity</p>
                 <p className="price">$160</p>
               </li>
-
               <h3> $700</h3>
             </ul>
           </div>
           <div className="checkout-col">
             <form onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="Address">Address</label>
+                <label htmlFor="address">Address</label>
                 <div className="form-col">
                   <input
-                    name="Address"
+                    id="address"
+                    name="address"
                     type="text"
                     placeholder="City"
-                    value={formValues.Address}
+                    value={formValues.address}
                     onChange={handleChange}
+                    autoComplete="address-line1"
                   />
                   <input
+                    id="zipCode"
                     name="zipCode"
                     type="text"
                     placeholder="Zip"
                     value={formValues.zipCode}
                     onChange={handleChange}
+                    autoComplete="postal-code"
                   />
                 </div>
                 <div className="payment-form">
