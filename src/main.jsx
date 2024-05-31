@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     path: "checkout/:checkoutId",
     element: <Checkout />,
   },
+  {
+    path: "*", 
+    element: <ErrorPage />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

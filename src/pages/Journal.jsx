@@ -1,10 +1,11 @@
+
 import React from "react";
 import HeadText from "../components/HeadText/HeadText";
+import "./Pages.css";
 import { MdArrowOutward } from "react-icons/md";
 import { CiClock1 } from "react-icons/ci";
 import { FaFireAlt } from "react-icons/fa";
 import Footer from "../components/Footer/Footer";
-import "./Pages.css";
 
 export default function Journal() {
   const articles = [
@@ -45,7 +46,7 @@ export default function Journal() {
   return (
     <>
       <HeadText />
-      <div id="journal">
+      <div id="Journal">
         <div className="journal-headtext">
           <h1 className="journal-header">SNEAKER NEWS</h1>
         </div>

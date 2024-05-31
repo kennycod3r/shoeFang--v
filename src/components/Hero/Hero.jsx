@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
+import NikeSvgHero from '../../assets/nike.svg';
 
 export default function Hero() {
   const [reminder, setReminder] = useState(false);
@@ -12,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="hero">
+    <div className="hero" style={{ backgroundImage: `url(${NikeSvgHero})` }}>
       <div className="hero-inner-section">
         <div className="hero-sales-text">
           <h2 className="hero-headtext">
@@ -21,13 +22,11 @@ export default function Hero() {
           </h2>
           <div className="aligned-paragraphs">
             <p>
-              The Air Jordan 6 “Reverse Oreo” drops this June set
-              Reminder!.They're stated to release on Nike SNKRS, Jordan
-              retailers for a standard price tag of $200.
+              The Air Jordan 6 “Reverse Oreo” drops this June. Set a reminder! They're slated to release on Nike SNKRS and Jordan retailers for a standard price tag of $200.
             </p>
             <p>Be sure to grab your pair on release date for retail here!</p>
           </div>
-          <Link className="article" to="/Journal/1">
+          <Link className="article" to="/journal/1">
             read more in article <MdArrowOutward />
           </Link>
         </div>

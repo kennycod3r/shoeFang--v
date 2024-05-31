@@ -4,8 +4,10 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background: url("C:/Users/KENNY/shoefang/src/assets/nike.svg") center/cover no-repeat,
-    var(--background-color) !important;
+  background-position: center;
+  background-repeat:repeat !important;
+  background-size: contain;
+  background-color: var(--background-color);
   background-blend-mode: var(--background-blend);
 }
 
