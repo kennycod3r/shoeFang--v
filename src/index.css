@@ -1,7 +1,6 @@
-
 /* Root variables */
 :root {
-  --primary: #181818;
+  --primary: #1f1f1f;
   --linkColor: rgb(97, 97, 97);
   --box-shadow: 0 0 10px #52525235;
   --animationSmooth: all 200ms ease-out;
@@ -18,9 +17,6 @@
 del {
   color: #7b7b7b;
 }
-.ratings-star {
-  color: #d8a94c;
-}
 
 /* Global resets */
 * {
@@ -28,41 +24,12 @@ del {
   margin: 0;
   box-sizing: border-box;
 }
-.loading-wrapper {
-  height: 100svh;
-  display: flex;
-  position: fixed;
-  min-height: 100%;
-  background-color: var(--bodyColor);
-  top: 0;
-  left: 0;
+
+html {
+  scroll-behavior: smooth;
   width: 100%;
-  z-index: 1111;
-  align-items: center;
-  justify-content: center;
+  -webkit-font-smoothing: antialiased;
 }
-
-.loading-circle{
-  width: 3em;
-  height: 3em;
-  transition: all ease-in-out;
-}
-.animate{
-  display: inline-block; /* Ensures the element rotates around its center */
-  animation: rotate 0.7s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-
 /* Body styles */
 body {
   background-color: var(--bodyColor);
@@ -83,11 +50,7 @@ body {
 /* Root container */
 #root {
   width: 100%;
-}
-
-/* Typography */
-.small {
-  font-size: 14px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -95,9 +58,18 @@ a {
   color: inherit;
 }
 
+img {
+  width: 100%;
+}
 li {
   list-style: none;
 }
+
+/* Typography */
+.small {
+  font-size: 14px;
+}
+
 
 /* Utility classes */
 .hero-headtext,
@@ -108,9 +80,6 @@ li {
   line-height: 1.095;
   margin-bottom: 10px;
   font-size: 3em;
-}
-img {
-  width: 100%;
 }
 
 .headtext-small {
@@ -184,9 +153,15 @@ img {
 .back-to-top-button:hover {
   opacity: 0.7;
 }
+
 @media only screen and (max-width: 650px) {
   .hero-headtext {
-    font-size: 2.3em;
+    font-size: 2em;
     font-weight: bold;
   }
+
+  body{
+    text-align: center;
+  }
 }
+

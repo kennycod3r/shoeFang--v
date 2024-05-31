@@ -33,7 +33,6 @@ export default function ShoeFang() {
     (imageId, newItemPrice) => {
      setBag((prevState) => prevState.filter((item) => item.imageId !== imageId));
       setTotal((prevState) => prevState - Number(newItemPrice));
-      console.log("fish")
     },
     []
   );
@@ -120,5 +119,5 @@ export default function ShoeFang() {
       <HeroTwo />
       <Footer />
     </div>
-  );
+  )
 };

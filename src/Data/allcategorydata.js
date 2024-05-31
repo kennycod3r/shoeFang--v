@@ -5,7 +5,7 @@ const allcategorydata = [
     title: "Nike Dunk Low Twist",
     reviews: "(23 reviews)",
     description: "Wmns Dunk Low Twist",
-    prevPrice: "£150",
+    prevPrice: "150",
     newPrice: "90",
   },
   {
@@ -13,7 +13,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GJMjUlYaoAASnxr?format=jpg&name=large",
     title: "Nike Air Max Plus",
     description: "Air Max Plus",
-    prevPrice: "£180",
+    prevPrice: "180",
     newPrice: "120",
   },
   {
@@ -22,7 +22,7 @@ const allcategorydata = [
     title: "The Nike Little Posite",
     reviews: "(323 reviews)",
     description: "Little Posite",
-    prevPrice: "£160",
+    prevPrice: "160",
     newPrice: "110",
   },
   {
@@ -30,7 +30,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GN_XlCzaAAAiVG1?format=jpg&name=large",
     title: "Dark Pony",
     description: "“Reverse Oreo”",
-    prevPrice: "£175",
+    prevPrice: "175",
     newPrice: "130",
   },
   {
@@ -38,7 +38,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GNdpmEcXEAA4DcI?format=jpg&name=large",
     title: "marron nikes",
     description: "maroon nikes",
-    prevPrice: "£140",
+    prevPrice: "140",
     newPrice: "100",
   },
   {
@@ -46,7 +46,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GM1QXU-XsAA65bq?format=jpg&name=medium",
     title: "Air Jordan 6",
     description: "“Olympic”",
-    prevPrice: "£200",
+    prevPrice: "200",
     newPrice: "150",
   },
   {
@@ -54,7 +54,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GMBiwGMXUAE70Al?format=jpg&name=large",
     title: "New Balance 550",
     description: "golf",
-    prevPrice: "£120",
+    prevPrice: "120",
     newPrice: "90",
   },
   {
@@ -62,7 +62,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GLeCKbmXcAIUSyr?format=jpg&name=large",
     title: "Jordan Tatum 2",
     description: "Sidewalk Chalk",
-    prevPrice: "£190",
+    prevPrice: "190",
     newPrice: "130",
   },
   {
@@ -70,7 +70,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GK6CPJwWUAAXFy9?format=jpg&name=large",
     title: "Jordan Tatum 2",
     description: "Electric Green",
-    prevPrice: "£160",
+    prevPrice: "160",
     newPrice: "120",
   },
   {
@@ -78,7 +78,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large",
     title: "Corteiz x Nike Air Max 95",
     description: "Tour Yellow",
-    prevPrice: "£180",
+    prevPrice: "180",
     newPrice: "140",
   },
   {
@@ -86,7 +86,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GK08GOQXwAAFRUH?format=jpg&name=large",
     title: "Maniére x Air Jordan 4",
     description: "Phantom",
-    prevPrice: "£170",
+    prevPrice: "170",
     newPrice: "130",
   },
   {
@@ -94,7 +94,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GKWJpDsWcAEJUY3?format=jpg&name=large",
     title: "Nike Air Max 95",
     description: "Logo Pack",
-    prevPrice: "£155",
+    prevPrice: "155",
     newPrice: "115",
   },
   {
@@ -102,7 +102,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GJoOnxqXgAAAc9m?format=jpg&name=large",
     title: "puma rs-x Efekt",
     description: "Cool Grey",
-    prevPrice: "£140",
+    prevPrice: "140",
     newPrice: "100",
   },
   {
@@ -110,7 +110,7 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GJnXxtKWEAE24Xe?format=jpg&name=large",
     title: "Air Jordan 6",
     description: "“Bred”",
-    prevPrice: "£150",
+    prevPrice: "150",
     newPrice: "110",
   },
   {
@@ -118,15 +118,15 @@ const allcategorydata = [
     img: "https://pbs.twimg.com/media/GJnDBx7XgAAFQK4?format=jpg&name=large",
     title: "The Air Jordan 3",
     description: "floral",
-    prevPrice: "£170",
+    prevPrice: "170",
     newPrice: "130",
   },
   {
     id: 16,
     img: "https://pbs.twimg.com/media/GJdf8TAXEAIHw4J?format=jpg&name=large",
     title: "Travis Scott x Air Jordan 1",
-    description: "“Medium Olive”",
-    prevPrice: "£200",
+    description: "Medium olive",
+    prevPrice: "200",
     newPrice: "150",
   },
 ];

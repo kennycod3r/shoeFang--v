@@ -10,22 +10,23 @@
 
 .sponsor-wrapper {
   margin: 1em;
+  margin-bottom: 2em;
   display: flex;
   flex-wrap: nowrap;
 }
 
 .sponsor-wrapper img {
-  width: 100%;
   height: 40px;
   object-fit: contain;
 }
 
-.cat-item {
-  color: #3c443f;
+.flex-nike {
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bolder;
-  display: inline-flex;
+  display: flex;
+  align-self: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -67,12 +68,6 @@ button {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 650px) {
-  .category-section {
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-  }
-}
 .ac-card {
   cursor: pointer;
 }
@@ -155,11 +150,13 @@ button {
   font-size: 1em;
   line-height: 1.8;
   font-weight: 600;
+  text-transform: uppercase;
   color: var(--primary);
 }
 
 .ac-card-details p {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .ad-card img {
@@ -167,6 +164,11 @@ button {
 }
 
 @media only screen and (max-width: 650px) {
+  .category-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
   .img-absolute-div {
     min-height: 15em;
     object-fit: cover;
@@ -175,18 +177,11 @@ button {
     font-size: 10px;
   }
   .shop-circle {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
   .nav-icons {
     height: 17px;
-  }
-
-  .ac-card-details p {
-    font-size: small;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
   }
 }

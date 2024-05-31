@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Folder.css";
+import "./Footer.css";
 import React from "react";
 import BackToTop from "../../utility/BackToTop";
 
@@ -47,8 +47,7 @@ export default function Footer() {
           <div className="aligned-paragraphs">
             <p>
               Extra 10% off* discount sent via email to new subscribers only.
-            </p>
-            <p>By subscribing, you agree to receive marketing communications</p>
+            By subscribing, you agree to receive marketing communications</p>
             <p>by email. You can unsubscribe at any point.</p>
           </div>
           <ul className="aligned-paragraphs">

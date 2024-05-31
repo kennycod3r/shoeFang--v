@@ -33,7 +33,7 @@ const HeadText = ({  handleSidebar, bagData, total, handleRemoveBagItem }) => {
             ) : null}
           </div>
 
-          <div className="flexCenter div-two Head">
+          <div className="flexCenter div-two">
             <Link to="/" className="head-text">
               ShoeFang
               <img src={fangs} className="fangs" alt="fang" />

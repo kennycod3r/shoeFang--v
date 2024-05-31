@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CloseButton from "./CloseButton";
 import { CiTrash } from "react-icons/ci";
 
+
 export default function BagItem({
   handleBagOpen,
   newItemTitle,
@@ -47,7 +48,7 @@ export default function BagItem({
       </div>
       <div className="flexSpaceBetween price-header">
         <p>
-          <del>{newItemPrevPrice}</del> £{newItemPrice}
+          <del>£{newItemPrevPrice}</del> £{newItemPrice}
         </p>
         <div className="flexCenter">
           <p className="small">QTY</p>
@@ -86,5 +87,3 @@ export default function BagItem({
     </div>
   );
 }
-
-

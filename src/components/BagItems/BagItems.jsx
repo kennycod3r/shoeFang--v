@@ -63,7 +63,7 @@ export default function BagItems({
           </div>
 
           <button className="checkout-btn">
-            <Link to={`CheckOut/2`} className="btn-link">
+            <Link to={`CheckOut/3`} className="btn-link">
               CHECKOUT
             </Link>
           </button>

@@ -33,7 +33,7 @@ export default function AllCategoryCard({
       <div className="ac-item-wrapper">
         <div className="img-absolute-div">
           <ImageWithFallback src={image} alt={title} fallbackSrc={unavailable} className="image" />
-          <Discount />
+          <Discount newPrice={newPrice} prevPrice={prevPrice}/>
           <div className="flexCenter shop-circle" onClick={handleBagData}>
             {bagged ? (
               <FaCartShopping className="nav-icons" />
@@ -50,7 +50,7 @@ export default function AllCategoryCard({
             description
           ) : (
             <>
-              <del>{prevPrice}</del> £{newPrice}
+              <del>£{prevPrice}</del> £{newPrice}
             </>
           )}
         </p>
