@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from "react";
-//import { FaCartShopping } from "react-icons/fa";
 import { BsCartCheckFill } from "react-icons/bs";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import Discount from "./Discount";
 import ImageWithFallback from "./ImageWithFallback";
 import unavailable from "../Img/unavailable.webp";
-//import './AllCategoryCard.css';
+
 
 const AllCategoryCard = React.memo(({
   image,
@@ -31,7 +30,7 @@ const AllCategoryCard = React.memo(({
           <ImageWithFallback src={image} alt={title} fallbackSrc={unavailable} className="image" />
           <Discount newPrice={newPrice} prevPrice={prevPrice} />
           <div className="flexCenter shop-circle" onClick={handleBagData}>
-            {bagged ? <BsCartCheckFill />: <PiShoppingCartSimple className="nav-icons" />}
+            {bagged ? <BsCartCheckFill  className="nav-icons" />: <PiShoppingCartSimple className="nav-icons" />}
           </div>
         </div>
       </div>

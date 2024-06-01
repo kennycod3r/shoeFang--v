@@ -3,7 +3,7 @@ import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
-import NikeSvgHero from '../../assets/nike.svg';
+import nikeLogoImg from '../../Img/nikeLogoImg.webp';
 
 const Hero = React.memo(() => {
   const [reminder, setReminder] = useState(false);
@@ -13,7 +13,7 @@ const Hero = React.memo(() => {
   }, []);
 
   return (
-    <div className="hero" style={{ backgroundImage: `url(${NikeSvgHero})` }}>
+    <div className="hero" style={{ backgroundImage: `url(${nikeLogoImg})` }}>
       <div className="hero-inner-section">
         <div className="hero-sales-text">
           <h2 className="hero-headtext">
