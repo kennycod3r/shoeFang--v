@@ -1,16 +1,16 @@
 import "./Hero.css";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
 import NikeSvgHero from '../../assets/nike.svg';
 
-export default function Hero() {
+const Hero = React.memo(() => {
   const [reminder, setReminder] = useState(false);
 
-  const toggleReminder = () => {
+  const toggleReminder = useCallback(() => {
     setReminder((prevReminder) => !prevReminder);
-  };
+  }, []);
 
   return (
     <div className="hero" style={{ backgroundImage: `url(${NikeSvgHero})` }}>
@@ -34,7 +34,8 @@ export default function Hero() {
           <img
             className="yzy"
             src="https://pbs.twimg.com/media/GODoPrdW4AEqgbT?format=jpg&name=large"
-            alt="article"
+            alt="shoe-img"
+            loading="lazy"
           />
           <div
             className="flexCenter shop-circle reminder"
@@ -53,4 +54,6 @@ export default function Hero() {
       </div>
     </div>
   );
-}
+});
+
+export default Hero;

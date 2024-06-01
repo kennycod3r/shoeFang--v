@@ -27,6 +27,8 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
               imageUrl={item.imageUrl}
               imageId={item.imageId}
               handleRemoveBagItem={handleRemoveBagItem}
+              qty={item.qty}
+              size={item.size}
             />
           ))}
         </>
@@ -48,8 +50,8 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
             <p>Subtotal</p>
             <p className="total-price">£{total}.00</p>
           </div>
-          <button className="checkout-btn">
-            <Link to="CheckOut/3" className="btn-link">
+          <button className="checkout-btn" onClick={handleBagOpen}>
+            <Link to="/checkout" className="btn-link">
               CHECKOUT
             </Link>
           </button>

@@ -1,11 +1,12 @@
 .hero {
-  min-height: 70vh;
+  min-height: 70svh;
+  min-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   background-position: center;
-  background-repeat:repeat !important;
+  background-repeat: repeat;
   background-size: contain;
   background-color: var(--background-color);
   background-blend-mode: var(--background-blend);
@@ -14,9 +15,8 @@
 .hero-inner-section {
   background-color: #f5f5f2;
   color: var(--text-color);
-  height: 60%;
+  min-height: 60%;
   max-width: 80%;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2px;
@@ -83,6 +83,5 @@
   .hero-inner-section {
     color: var(--text-color);
     height: auto;
-    display: block;
   }
 }

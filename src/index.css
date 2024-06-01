@@ -130,7 +130,7 @@ li {
   position: fixed;
   bottom: 60px;
   right: 45px;
-  z-index: 300;
+  z-index: 90;
 }
 
 .back-to-top-button {
@@ -153,7 +153,9 @@ li {
 .back-to-top-button:hover {
   opacity: 0.7;
 }
-
+.body-section{
+  position: relative;
+}
 @media only screen and (max-width: 650px) {
   .hero-headtext {
     font-size: 2em;

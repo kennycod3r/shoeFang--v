@@ -1,53 +1,37 @@
-import { useState, useCallback, useMemo } from "react";
-import * as React from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Products from "../components/Products/Products";
 import Recommended from "../components/Recommended/Recommended";
 import Sidebar from "../components/Sidebar/Sidebar";
-import storeData from '../Data/Data';
+import storeData from "../Data/Data";
 import HeadText from "../components/HeadText/HeadText";
 import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
 import HeroTwo from "../components/HeroTwo/HeroTwo";
+import { Outlet } from "react-router-dom";
 import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
 import AllCategoryCard from "../utility/AllCategoryCard";
+import { BagProvider } from "../context/BagContext";
 
-
-
-
-export default function ShoeFang() {
+export default function ShoeFangTwo() {
   const [closeSidebar, setCloseSidebar] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [bag, setBag] = useState([]);
   const [query, setQuery] = useState("");
   const [total, setTotal] = useState(0);
 
-  const handleBag = useCallback(
-    (newBagData) => {
-      setBag((prevState) => [...prevState, newBagData]);
-      setTotal((prevState) => prevState + Number(newBagData.newPrice));
-    },
-    []
-  );
+  const handleBag = useCallback((newBagData) => {
+    setBag((prevState) => [...prevState, newBagData]);
+    setTotal((prevState) => prevState + Number(newBagData.newPrice));
+  }, []);
 
-  const handleRemoveBagItem = useCallback(
-    (imageId, newItemPrice) => {
-     setBag((prevState) => prevState.filter((item) => item.imageId !== imageId));
-      setTotal((prevState) => prevState - Number(newItemPrice));
-    },
-    []
-  );
-
-
-  function handleRemoveBag(imageId, newItemPrice){
+  const handleRemoveBagItem = useCallback((imageId, newItemPrice, qty) => {
     setBag((prevState) => prevState.filter((item) => item.imageId !== imageId));
     setTotal((prevState) => prevState - Number(newItemPrice));
-  }
+  }, []);
 
   const handleSidebar = useCallback(() => {
     setCloseSidebar((prevState) => !prevState);
   }, []);
-
-
 
   const handleInputChange = useCallback((event) => {
     setQuery(event.target.value);
@@ -94,30 +78,33 @@ export default function ShoeFang() {
         handleBag={handleBag}
       />
     ));
-  }, [filteredItems, selectedCategory, handleBag,query]);
+  }, [filteredItems, selectedCategory, handleBag, query]);
 
   return (
-    <div id="detail">
-      <HeadText
-        handleSidebar={handleSidebar}
-        total={total}
-        bagData={bag}
-        handleRemoveBagItem={handleRemoveBagItem}
-      />
-
-      {closeSidebar && <Sidebar handleSidebar={handleSidebar} />}
-
-      <Hero />
-      <AllCategorySection handleBag={handleBag} />
-      <Recommended
-        handleClick={handleClick}
-        query={query}
-        handleChange={handleRadioChange}
-        handleInputChange={handleInputChange}
-      />
-      <Products result={filteredData} />
-      <HeroTwo />
-      <Footer />
-    </div>
-  )
-};
+    <BagProvider value={{ bag, total, handleBag, handleRemoveBagItem }}>
+      <div id="detail">
+        <HeadText
+          handleSidebar={handleSidebar}
+          total={total}
+          bagData={bag}
+          handleRemoveBagItem={handleRemoveBagItem}
+        />
+        <section className="body-section">
+          <Outlet />
+          <Hero />
+          {closeSidebar && <Sidebar handleSidebar={handleSidebar} />}
+          <AllCategorySection handleBag={handleBag} />
+          <Recommended
+            handleClick={handleClick}
+            query={query}
+            handleChange={handleRadioChange}
+            handleInputChange={handleInputChange}
+          />
+          <Products result={filteredData} />
+          <HeroTwo />
+        </section>
+        <Footer />
+      </div>
+    </BagProvider>
+  );
+}

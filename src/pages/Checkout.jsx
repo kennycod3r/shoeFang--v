@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import HeadText from "../components/HeadText/HeadText";
+import ReactDOM from "react-dom";
 import PaymentForm from "../utility/PaymentForm";
-import Footer from "../components/Footer/Footer";
+import HeadText from "../components/HeadText/HeadText";
+import { useBagContext } from "../context/BagContext";
 
-export default function Checkout() {
+const Checkout = () => {
+  const { bag, total } = useBagContext();
+
   const [formValues, setFormValues] = useState({
     address: "",
     zipCode: "",
@@ -26,29 +29,29 @@ export default function Checkout() {
     });
   };
 
-  return (
-    <>
+  console.log("Bag Data:", bag); // Log the bag data
+
+  const checkoutForm = (
+    <div id="checkoutForm">
       <HeadText />
-      <div id="checkout" className="checkout-form">
+      <div className="checkout-form">
         <h3 className="headtext-small">Checkout</h3>
         <p className="light-grey small">home/cart/checkout</p>
         <div className="checkout-form-inner">
           <div className="checkout-col">
-            <div className="checkout-card">
-              <div className="checkout-card-details">
-                <h3 className="headtext-small">Nike React Infinity</h3>
-                <p>Size: 42</p>
-                <p>QTY: 1</p>
-                <p className="light-grey small">Details</p>
+            {bag.map(item => (
+              <div key={item.imageId} className="checkout-card">
+                <div className="checkout-card-details">
+                  <h3 className="headtext-small">{item.title}</h3>
+                  <p>Size: {item.size}</p>
+                  <p>QTY: {item.qty}</p>
+                  <p className="light-grey small">Details</p>
+                </div>
+                <div>
+                  <img src={item.imageUrl} alt={item.title} />
+                </div>
               </div>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large"
-                  alt="shoe"
-                />
-              </div>
-            </div>
-            {/* Additional checkout cards can be added here */}
+            ))}
           </div>
           <div className="checkout-col">
             <ul className="white-overlay">
@@ -56,19 +59,16 @@ export default function Checkout() {
                 <h3>TOTAL</h3>
                 <p className="light-grey">included delivery charge *$40</p>
               </li>
+              {bag.map(item => (
+                <li key={item.imageId}>
+                  <p>{item.title}</p>
+                  <p className="price">${item.newPrice}</p>
+                </li>
+              ))}
               <li>
-                <p>Nike React infinity</p>
-                <p className="price">$160</p>
+                <p>item total</p>
+                <h3>${total}</h3>
               </li>
-              <li>
-                <p>Nike React infinity</p>
-                <p className="price">$160</p>
-              </li>
-              <li>
-                <p>Nike React infinity</p>
-                <p className="price">$160</p>
-              </li>
-              <h3> $700</h3>
             </ul>
           </div>
           <div className="checkout-col">
@@ -104,7 +104,13 @@ export default function Checkout() {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
-}
+
+  return ReactDOM.createPortal(
+    checkoutForm,
+    document.getElementById("CheckoutPage")
+  );
+};
+
+export default Checkout;

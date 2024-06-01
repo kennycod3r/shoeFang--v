@@ -12,14 +12,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "checkout",
+        element: <Checkout />,
+      },
+    ],
   },
   {
     path: "journal/:journalId",
     element: <Journal />,
-  },
-  {
-    path: "checkout/:checkoutId",
-    element: <Checkout />,
   },
   {
     path: "*", 

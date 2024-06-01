@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Promo from "./Promo";
 import BagItems from "../BagItems/BagItems";
-import HamburgerMenu from '../../utility/HamburgerMenu';
+import HamburgerMenu from "../../utility/HamburgerMenu";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import fangs from "../../assets/fangs.svg";
 import "./HeadText.css";
 
-const HeadText = ({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
+const HeadText = React.memo(({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
   const [bagOpen, setBagOpen] = useState(false);
 
-  const handleBagOpen = () => {
+  const handleBagOpen = useCallback(() => {
     setBagOpen(prevState => !prevState);
-  };
+  }, []);
 
   return (
     <>
@@ -36,7 +36,7 @@ const HeadText = ({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
           <div className="flexCenter div-two">
             <Link to="/" className="head-text">
               ShoeFang
-              <img src={fangs} className="fangs" alt="fang" />
+              <img src={fangs} className="fangs" alt="fang" loading="lazy" />
             </Link>
           </div>
 
@@ -65,6 +65,6 @@ const HeadText = ({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
       )}
     </>
   );
-};
+});
 
 export default HeadText;

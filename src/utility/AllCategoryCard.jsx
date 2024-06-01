@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { FaCartShopping } from "react-icons/fa6";
+import React, { useState, useCallback } from "react";
+import { FaCartShopping } from "react-icons/fa";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import Discount from "./Discount";
 import ImageWithFallback from "./ImageWithFallback";
 import unavailable from "../Img/unavailable.webp";
+//import './AllCategoryCard.css';
 
-const AllCategoryCard = ({
+const AllCategoryCard = React.memo(({
   image,
   description,
   title,
@@ -16,11 +17,11 @@ const AllCategoryCard = ({
 }) => {
   const [bagged, setBagged] = useState(false);
 
-  const handleBagData = () => {
+  const handleBagData = useCallback(() => {
     const newBagData = { title, newPrice, prevPrice, imageUrl: image, imageId };
     handleBag(newBagData);
     setBagged(true);
-  };
+  }, [handleBag, image, title, newPrice, prevPrice, imageId]);
 
   return (
     <section className="ac-card">
@@ -41,6 +42,6 @@ const AllCategoryCard = ({
       </div>
     </section>
   );
-};
+});
 
 export default AllCategoryCard;

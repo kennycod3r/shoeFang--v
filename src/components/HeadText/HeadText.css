@@ -1,5 +1,5 @@
 :root {
-  --primaryGreen: #3c443f;;
+  --primaryGreen: #3c443f;
 }
 .promo-nav {
   background-color: #3c443f;
@@ -21,6 +21,7 @@
   width: 30px;
   cursor: pointer;
 }
+
 .promo-nav span {
   text-decoration: underline;
   cursor: pointer;
@@ -48,7 +49,7 @@
 }
 
 #sidebar {
-  color:var(--primaryGreen)
+  color: var(--primaryGreen);
 }
 
 .outer-div {
@@ -57,7 +58,7 @@
   width: 100%;
   background-color: #f5f5f2;
   top: 0;
-  z-index: 99;
+  z-index: 79;
   padding: 10px 20px;
   border-bottom: 0.01px solid #1d1d1b33;
 }
@@ -84,7 +85,6 @@
 .div-one div {
   cursor: pointer;
   transition: var(--animationSmooth);
-  
 }
 
 .div-one div:hover {
@@ -117,7 +117,7 @@
   margin: 0;
   display: flex;
   align-items: center;
-  z-index: 999;
+  z-index: 89;
 }
 
 .hamburger:hover {
@@ -132,16 +132,17 @@
 }
 
 .placeholder {
-  min-height: 100svh; /* Adjust the height to match the expected content */
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0; /* Optional: for visual indication */
+  background-color: #f0f0f0;
 }
 
 .dontSbs {
   display: none;
 }
+
 @media only screen and (max-width: 780px) {
   .outer-div {
     position: sticky;
@@ -154,7 +155,6 @@
     display: none;
     font-size: small;
   }
-
   .bag-mobile {
     display: flex;
     justify-content: right;
@@ -164,4 +164,3 @@
     font-size: 20px;
   }
 }
-

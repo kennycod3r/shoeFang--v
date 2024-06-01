@@ -1,14 +1,13 @@
-import * as React from "react";
+import React from "react";
 import "./App.css";
 import ShoeFangTwo from "./pages/ShoeFangTwo";
+import { BagProvider } from "./context/BagContext";
 
 function App() {
   return (
-    <>
-      <div>
-        <ShoeFangTwo/>
-      </div>
-    </>
+    <BagProvider>
+      <ShoeFangTwo />
+    </BagProvider>
   );
 }
 
