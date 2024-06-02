@@ -70,8 +70,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   align-content: space-between;
-  justify-content: center;
-  justify-items: center;
+  justify-content: space-between;
   text-align: center;
 }
 
