@@ -33,7 +33,7 @@ const Checkout = () => {
 
   const checkoutForm = (
     <div id="checkoutForm">
-      <HeadText />
+      <HeadText bagData = {[]}/>
       <div className="checkout-form">
         <h3 className="headtext-small">Checkout</h3>
         <p className="light-grey small">home/cart/checkout</p>

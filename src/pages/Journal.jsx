@@ -45,7 +45,7 @@ export default function Journal() {
 
   return (
     <>
-      <HeadText />
+      <HeadText/>
       <div id="Journal">
         <div className="journal-headtext">
           <h1 className="journal-header">SNEAKER NEWS</h1>
