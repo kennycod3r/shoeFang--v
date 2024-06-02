@@ -67,7 +67,7 @@
 .inner-div {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   align-content: space-between;
   justify-content: center;
@@ -79,6 +79,8 @@
   font-size: 15px;
   font-weight: 600;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   gap: 15.5px;
   color: var(--primaryGreen);
