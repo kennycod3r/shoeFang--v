@@ -22,6 +22,7 @@
   box-shadow: var(--box-shadow);
   z-index: 95;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   padding: 12px;
   text-align: left;
@@ -31,7 +32,7 @@
 }
 
 .Bag-item-section h2 {
-  color: #303030;
+  color: var(--primary);
   margin-top: 0.3em;
   font-weight: 600;
   font-size: 2em;
@@ -69,7 +70,7 @@
   justify-content: space-between;
   border-radius: 5px;
   background-color: #0d0d0da9;
-  color: #c9c9c9;
+  color: var(--bodyColor);
   box-shadow: var(--box-shadow);
   font-weight: 500;
   transition: var(--animationSmooth);
@@ -152,7 +153,7 @@
 .bag-btn {
   background-color: rgba(33, 33, 33, 0.87);
   width: 100%;
-  color: #f5f5f2;
+  color: var(--bodyColor);
   text-align: center;
   padding: 0 10px;
   cursor: pointer;

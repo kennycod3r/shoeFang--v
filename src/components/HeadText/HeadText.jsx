@@ -35,7 +35,7 @@ const HeadText = React.memo(({ handleSidebar, bagData, total, handleRemoveBagIte
 
           <div className="flexCenter div-two">
             <Link to="/" className="head-text">
-              ShoeFang
+              <h3>ShoeFang</h3>
               <img src={fangs} className="fangs" alt="fang" loading="lazy" />
             </Link>
           </div>

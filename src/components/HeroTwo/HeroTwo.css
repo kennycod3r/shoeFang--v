@@ -66,6 +66,7 @@
   @media only screen and (max-width: 650px) {
     .hero2-container {
       display: block;
+      text-align: center;
     }
   
     .text-button-container h2 {

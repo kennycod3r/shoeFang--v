@@ -25,17 +25,19 @@
     width: calc(100% - 110px);
     color: whitesmoke;
     background-color: #333;
-    display: inline-block; /* Ensure input and button are on the same line */
+    display: inline-block; 
   }
   
   .newsletter-div button {
     padding: 15px 20px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    margin-left: -5px; /* Adjust margin to align with the input */
+    margin-left: -5px;
+    background-color: var(--bodyColor) !important;
+    color: var(--primary);
     border: none;
     font-weight: bold;
-    display: inline-block; /* Ensure input and button are on the same line */
+    display: inline-block;
   }
   
   .footer-container {
@@ -58,8 +60,10 @@
   }
   .aligned-paragraphs {
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
     margin-bottom: 20px; 
   }
   
@@ -75,12 +79,17 @@
   }
   
   @media only screen and (max-width: 650px) {
-    .footer-container {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    .Homefooter{
+      text-align: center;
     }
-    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    .footer-col {
+      padding: 20px 10px;
+    }
     .newsletter-div input, .newsletter-div button {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%; 
         margin: 5px 0; /* Margin adjustment for stacking */
     }
   }
