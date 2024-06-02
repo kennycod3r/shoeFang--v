@@ -85,6 +85,15 @@
     .footer-container {
         grid-template-columns: 1fr;
     }
+    .footer-ap{
+      margin-left: 10px;
+    }
+
+    .Homefooter h2{
+      font-size: large;
+      line-height: normal;
+      letter-spacing: normal;
+    }
     .footer-col {
       padding: 20px 10px;
     }

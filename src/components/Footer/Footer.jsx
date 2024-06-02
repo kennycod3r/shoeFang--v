@@ -44,13 +44,14 @@ export default function Footer() {
       </div>
       <div className="footer-container">
         <div className="footer-col">
-          <div className="aligned-paragraphs">
+          <div className="aligned-paragraphs footer-ap">
             <p>
-              Extra 10% off* discount sent via email to new subscribers only.
-            By subscribing, you agree to receive marketing communications</p>
+              Extra 10% off* discount sent via email to new subscribers only. By
+              subscribing, you agree to receive marketing communications
+            </p>
             <p>by email. You can unsubscribe at any point.</p>
           </div>
-          <ul className="aligned-paragraphs">
+          <ul className="aligned-paragraphs footer-ap">
             <li>Can I get a refund on my order?</li>
             <li>Can I make changes to my order?</li>
             <li>Can I cancel my order?</li>
@@ -59,14 +60,23 @@ export default function Footer() {
         </div>
         <div className="footer--text footer-col">
           <div>
-            <h2 className="headtext-small">
-             Subscribe and Receive
+            <h2 className="headtext-small fhs">
+              Subscribe and Receive
               <br />
               News And Offers!
             </h2>
           </div>
           <div className="newsletter-div">
-            <p style={{color:userEmail.subscribeMsg === "Enter a valid email" ? "red": "#f1f1f1"}}>{userEmail.subscribeMsg}</p>
+            <p
+              style={{
+                color:
+                  userEmail.subscribeMsg === "Enter a valid email"
+                    ? "red"
+                    : "#f1f1f1",
+              }}
+            >
+              {userEmail.subscribeMsg}
+            </p>
             <input
               placeholder="Enter Your Email Address"
               type="email"

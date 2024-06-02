@@ -160,6 +160,9 @@ li {
     font-size: 2em;
     font-weight: bold;
   }
+  .headtext-small{
+    line-height: normal;
+  }
 
 }
 
