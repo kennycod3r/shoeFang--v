@@ -8,8 +8,7 @@
   background-position: center;
   background-repeat: repeat;
   background-size: contain;
-  background-color: var(--background-color);
-  background-blend-mode: var(--background-blend);
+  
 }
 
 .hero-inner-section {
