@@ -13,7 +13,7 @@ import AllCategoryCard from "../utility/AllCategoryCard";
 import { BagProvider } from "../context/BagContext";
 
 export default function ShoeFangTwo() {
-  const [closeSidebar, setCloseSidebar] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [bag, setBag] = useState([]);
   const [query, setQuery] = useState("");
@@ -24,13 +24,13 @@ export default function ShoeFangTwo() {
     setTotal((prevState) => prevState + Number(newBagData.newPrice));
   }, []);
 
-  const handleRemoveBagItem = useCallback((imageId, newItemPrice, qty) => {
+  const handleRemoveBagItem = useCallback((imageId, newItemPrice) => {
     setBag((prevState) => prevState.filter((item) => item.imageId !== imageId));
     setTotal((prevState) => prevState - Number(newItemPrice));
   }, []);
 
   const handleSidebar = useCallback(() => {
-    setCloseSidebar((prevState) => !prevState);
+    setIsSidebarOpen((prevState) => !prevState);
   }, []);
 
   const handleInputChange = useCallback((event) => {
@@ -92,7 +92,7 @@ export default function ShoeFangTwo() {
         <section className="body-section">
           <Outlet />
           <Hero />
-          {closeSidebar && <Sidebar handleSidebar={handleSidebar} />}
+          <Sidebar handleSidebar={handleSidebar} isOpen={isSidebarOpen} />
           <AllCategorySection handleBag={handleBag} />
           <Recommended
             handleClick={handleClick}
@@ -108,3 +108,4 @@ export default function ShoeFangTwo() {
     </BagProvider>
   );
 }
+

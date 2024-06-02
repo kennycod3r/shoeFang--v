@@ -54,7 +54,7 @@
   width: 100%;
   z-index: 3;
   height: 0;
-  padding-bottom: 100%; /* Aspect ratio of 1:1 */
+  padding-bottom: 100%; 
 }
 
 .img-absolute-div .image {
@@ -64,7 +64,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(82%); /* Adjust the percentage as needed */
+  filter: brightness(89%); /* Adjust the percentage as needed */
 }
 
 .img-promo-div {
