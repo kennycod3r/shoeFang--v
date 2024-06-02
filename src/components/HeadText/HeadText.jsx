@@ -25,7 +25,7 @@ const HeadText = React.memo(({ handleSidebar, bagData, total, handleRemoveBagIte
               <Link to="/Journal/1">JOURNAL</Link>
             </div>
             <div className="show-mobile">ABOUT</div>
-            {bagData && (
+            {bagData.length > 0 && (
               <>
                 <div className="show-mobile">SALE</div>
                 <div className="show-mobile">SHOP</div>
@@ -36,16 +36,18 @@ const HeadText = React.memo(({ handleSidebar, bagData, total, handleRemoveBagIte
           <div className="flexCenter div-two">
             <Link to="/" className="head-text">
               <h3>ShoeFang</h3>
-             <div className="show-mobile"> <img src={fangs} className="fangs" alt="fang" loading="lazy"/></div>
+              <div className="show-mobile">
+                <img src={fangs} className="fangs" alt="fang" loading="lazy" />
+              </div>
             </Link>
           </div>
 
           <div className="div-one div-three">
-            {bagData && (
-              <div className="flexSpaceBetween" onClick={handleBagOpen}>
+            
+              <div className="flexSpaceBetween bag-link" onClick={handleBagOpen}>
                 BAG ({bagData.length})
               </div>
-            )}
+            
             <div className="show-mobile">ACCOUNT</div>
             <div className="acc-icon show-mobile">
               <AiOutlineUserAdd className="account-svg" />
@@ -68,3 +70,4 @@ const HeadText = React.memo(({ handleSidebar, bagData, total, handleRemoveBagIte
 });
 
 export default HeadText;
+

@@ -1,8 +1,12 @@
 :root {
   --primaryGreen: #3c443f;
+  --bodyColor: #ffffff;
+  --linkColor: #0073e6;
+  --animationSmooth: 0.3s ease-in-out;
 }
+
 .promo-nav {
-  background-color: #3c443f;
+  background-color: var(--primaryGreen);
   padding: 13px;
   color: var(--bodyColor);
   width: 100%;
@@ -46,7 +50,7 @@
 .nav-icons {
   width: 1.5rem;
   height: 1.3rem;
-  color: var(--primary);
+  color: var(--primaryGreen);
 }
 
 #sidebar {
@@ -69,8 +73,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  align-content: space-between;
-  justify-content: space-between;
   text-align: center;
 }
 
@@ -79,8 +81,7 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
   gap: 15.5px;
   color: var(--primaryGreen);
 }
@@ -106,9 +107,20 @@
 }
 
 .div-three {
+  display: flex;
   align-items: center;
-  justify-content: end;
-  width: 100%;
+  justify-content: flex-end;
+  gap: 15.5px;
+}
+
+.bag-link {
+  cursor: pointer;
+  transition: var(--animationSmooth);
+}
+
+.bag-link:hover {
+  transform: scale(1.1);
+  color: var(--linkColor);
 }
 
 .hamburger {
@@ -135,7 +147,7 @@
 }
 
 .placeholder {
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,16 +163,19 @@
     position: sticky;
     top: 0;
   }
-  .x{
+  .x {
     right: 4px;
   }
   .dontSbs {
     display: block;
   }
+  .div-two{
+    margin-left: 0;
+  }
   .show-mobile {
     display: none;
   }
-  
+
   .head-text {
     font-size: 20px;
   }
