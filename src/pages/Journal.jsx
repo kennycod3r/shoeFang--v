@@ -1,9 +1,10 @@
 import React from "react";
 import HeadText from "../components/HeadText/HeadText";
 import "./Pages.css";
+import arrowUp from '../assets/arrowUp.svg';
 import { MdArrowOutward } from "react-icons/md";
-import { CiClock1 } from "react-icons/ci";
-import { FaFireAlt } from "react-icons/fa";
+import clock from '../assets/clock.svg';
+import hot from '../assets/hot.svg';
 import Footer from "../components/Footer/Footer";
 import useLenis from "../components/hooks/UseLennis";
 import image7 from "../Img/shoe8.webp";
@@ -64,20 +65,20 @@ export default function Journal() {
             <div key={index} className="journal-article">
               <img src={article.image} alt={article.title} />
               <div className="dateWrapper">
-                <p>
-                  <CiClock1 />
+                <div className="dateWrapper-inner">
+                  <div className="flexBase"><img src={clock} alt="clock" className="clocksvg"/></div>
                   {article.date}
-                </p>
-                <p>
-                  <FaFireAlt />
+                </div>
+                <div  className="dateWrapper-inner">
+                  <div className="flexBase"><img src={hot} alt="fire"/></div>
                   Hot
-                </p>
+                </div>
               </div>
               <div className="j-art-text">
                 <h2>{article.title}</h2>
                 <p>{article.excerpt}</p>
                 <a href={`/journal/${index + 1}`} className="read-more">
-                  Read more <MdArrowOutward />
+                <p>Read more</p> <div className="animateLink"><img src={arrowUp} alt="arrow" className="arrowUp"/></div>
                 </a>
               </div>
             </div>

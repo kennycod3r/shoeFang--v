@@ -12,7 +12,9 @@
   text-align: center;
   margin-bottom: 20px;
 }
-
+.clocksvg{
+  object-fit: contain;
+}
 .journal-header {
   font-size: clamp(3.5rem, 1.3571rem + 5.5143vw, 6.5rem);
   font-weight: 700;
@@ -60,13 +62,13 @@
   left: 0.55rem;
 }
 
-.dateWrapper p {
+.dateWrapper .dateWrapper-inner {
   display: flex;
   align-items: center;
   gap: 2px;
   background-color: rgba(0, 0, 0, 0.277);
   font-size: small;
-  padding: 0 3px;
+  padding: 5px;
   border-radius: 5px;
 }
 .journal-article img {
@@ -85,11 +87,19 @@
 }
 
 .journal-article .read-more {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
   margin-top: 10px;
   color: var(--primary);
   text-decoration: none;
   font-weight: bold;
+  gap: 3px;
+}
+
+.arrowUp{
+  padding-top: 18px;
 }
 #checkoutForm{
   position: fixed;

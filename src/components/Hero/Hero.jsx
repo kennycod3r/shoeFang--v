@@ -1,7 +1,7 @@
 import "./Hero.css";
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { MdArrowOutward } from "react-icons/md";
+import arrowUp from '../../assets/arrowUp.svg';
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
 import nikeLogoImg from '../../Img/nikeLogoImg.webp';
 
@@ -14,7 +14,7 @@ const Hero = React.memo(() => {
   }, [reminder]);
 
   return (
-    <div className="hero" style={{ backgroundImage: `url(${nikeLogoImg})` }}>
+    <div className="hero"  style={{ backgroundImage: `url(${nikeLogoImg})` }}>
       <div className="hero-inner-section">
         <div className="hero-sales-text">
           <h2 className="hero-headtext">
@@ -28,7 +28,7 @@ const Hero = React.memo(() => {
             <p>Be sure to grab your pair on release date for retail here!</p>
           </div>
           <Link className="article" to="/journal/1">
-            read more in article <MdArrowOutward />
+            <p>read more in article</p> <div className="animateLink"><img src={arrowUp} alt="arrow"/></div>
           </Link>
         </div>
         <div className="relative-img">

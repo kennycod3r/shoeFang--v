@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { BsCartCheckFill } from "react-icons/bs";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import Discount from "./Discount";
+import cartEmpty from '../assets/cartempty.svg';
 
 
 const AllCategoryCard = React.memo(({
@@ -28,7 +29,7 @@ const AllCategoryCard = React.memo(({
           <img src={image} alt={title} className="image" />
           <Discount newPrice={newPrice} prevPrice={prevPrice} />
           <div className="flexCenter shop-circle" onClick={handleBagData}>
-            {bagged ? <BsCartCheckFill className="nav-icons" /> : <PiShoppingCartSimple className="nav-icons" />}
+            {bagged ? <BsCartCheckFill className="nav-icons" /> : <img src={cartEmpty} alt="add-shoe" className="nav-icons" />}
           </div>
         </div>
       </div>

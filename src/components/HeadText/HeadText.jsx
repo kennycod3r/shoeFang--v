@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Promo from "./Promo";
 import BagItems from "../BagItems/BagItems";
 import HamburgerMenu from "../../utility/HamburgerMenu";
-import { AiOutlineUserAdd } from "react-icons/ai";
 import fangs from "../../assets/fangs.svg";
 import "./HeadText.css";
+import accounticon from '../../assets/account.svg';
 
 const HeadText = React.memo(
   ({handleBagOpen, bagOpen, handleSidebar, bagData, total, handleRemoveBagItem }) => {
@@ -49,7 +49,7 @@ const HeadText = React.memo(
 
               <div className="show-mobile">ACCOUNT</div>
               <div className="acc-icon show-mobile">
-                <AiOutlineUserAdd className="account-svg" />
+                <img src={accounticon} alt="account" className="account-svg" />
               </div>
             </div>
           </div>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CloseButton from "./CloseButton";
 import { CiTrash } from "react-icons/ci";
 
-
 export default function BagItem({
   handleBagOpen,
   newItemTitle,
@@ -36,7 +35,10 @@ export default function BagItem({
 
   return (
     <div className="bag-item">
-      <div className="scroll-down"><p>scroll-down</p><p> ↓</p></div>
+      <div className="scroll-down">
+        <p>scroll-down</p>
+        <p> ↓</p>
+      </div>
       <CloseButton onClick={handleBagOpen} />
       <h2>{newItemTitle}</h2>
       <div className="bag-img-div">

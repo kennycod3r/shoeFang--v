@@ -29,7 +29,9 @@ html.lenis {
   margin: 0;
   box-sizing: border-box;
 }
-
+html {
+  scrollbar-width: none;
+}
 body {
   background-color: var(--bodyColor);
   color: var(--primary);
@@ -44,6 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: clamp(16px, 1.2vw, 19px);
+  
 }
 
 a {
@@ -78,26 +81,7 @@ li {
 .headtext-small {
   font-size: medium;
 }
-.flexSpaceBetween {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.flexCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.flexSpaceAround {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
-.flexBase {
-  display: flex;
-  align-items: baseline;
-}
 .btns {
   padding: 10px 20px;
   background: transparent;
@@ -140,6 +124,25 @@ li {
 
 .body-section {
   position: relative;
+}
+.animateLink {
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+  transform: rotate(0deg);
+}
+
+.animateLink:hover {
+  animation: animateArrow;
+  animation-duration: .4s;
+}
+
+@keyframes animateArrow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
 }
 
 @media only screen and (max-width: 650px) {
