@@ -1,5 +1,6 @@
 .category-section {
   width: 100%;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
@@ -13,7 +14,6 @@
   margin-bottom: 2em;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   justify-content: space-between;
   align-content: center;
   align-items: center;
@@ -28,13 +28,12 @@
 }
 
 .flex-nike {
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: bolder;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  gap: 10px;
+  width: 100%;
+}
+.flex-nike img{
+  height: 30px;
+  width: 30px;
+  margin: 0 auto;
 }
 .ac-card {
   cursor: pointer;
@@ -53,7 +52,6 @@
   border-radius: 5px;
   width: 100%;
   z-index: 3;
-  height: 0;
   padding-bottom: 100%; 
 }
 
@@ -64,7 +62,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(89%); /* Adjust the percentage as needed */
+  filter: brightness(89%);
 }
 
 .img-promo-div {

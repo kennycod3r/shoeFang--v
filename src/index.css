@@ -1,4 +1,3 @@
-/* Root variables */
 :root {
   --primary: #1c1d20;
   --linkColor: #616161;
@@ -7,49 +6,44 @@
   --bodyColor: #f1f1f1;
   --background-blend: darken;
   --background-color: rgba(34, 33, 33, 0.277);
-  line-height: 1.6;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 del {
   color: #7b7b7b;
 }
+html.lenis {
+  height: auto;
+}
 
-/* Global resets */
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-}
-/* Body styles */
 body {
   background-color: var(--bodyColor);
   color: var(--primary);
+  line-height: 1.6;
   font-family: "Inter", sans-serif;
   min-height: 100svh;
   height: 100%;
   font-optical-sizing: auto;
   font-weight: 400;
-  scroll-behavior: smooth;
+  transition: var(--animationSmooth);
   font-style: normal;
   display: flex;
   flex-direction: column;
-  font-variation-settings: "wdth" 100;
   font-size: clamp(16px, 1.2vw, 19px);
-}
-
-/* Root container */
-#root {
-  width: 100%;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -60,17 +54,14 @@ a {
 img {
   width: 100%;
 }
+
 li {
   list-style: none;
 }
-
-/* Typography */
 .small {
   font-size: 14px;
 }
 
-
-/* Utility classes */
 .hero-headtext,
 .headtext-small {
   text-transform: uppercase;
@@ -78,26 +69,25 @@ li {
   color: var(--primary);
   line-height: 1.095;
   margin-bottom: 10px;
+}
+
+.hero-headtext {
   font-size: 3em;
 }
 
 .headtext-small {
   font-size: medium;
-  color: inherit;
 }
-
 .flexSpaceBetween {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .flexSpaceAround {
   display: flex;
   align-items: center;
@@ -108,8 +98,6 @@ li {
   display: flex;
   align-items: baseline;
 }
-
-/* Button styles */
 .btns {
   padding: 10px 20px;
   background: transparent;
@@ -118,13 +106,10 @@ li {
   color: #323232;
   cursor: pointer;
 }
-
-/* Light grey text */
 .light-grey {
   color: rgb(125, 125, 125);
 }
 
-/* Back to top button */
 .back-to-top {
   position: fixed;
   bottom: 60px;
@@ -152,17 +137,18 @@ li {
 .back-to-top-button:hover {
   opacity: 0.7;
 }
-.body-section{
+
+.body-section {
   position: relative;
 }
+
 @media only screen and (max-width: 650px) {
   .hero-headtext {
     font-size: 2em;
     font-weight: bold;
   }
-  .headtext-small{
+
+  .headtext-small {
     line-height: normal;
   }
-
 }
-

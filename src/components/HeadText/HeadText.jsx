@@ -8,13 +8,8 @@ import fangs from "../../assets/fangs.svg";
 import "./HeadText.css";
 
 const HeadText = React.memo(
-  ({ handleSidebar, bagData, total, handleRemoveBagItem }) => {
-    const [bagOpen, setBagOpen] = useState(false);
-
-    const handleBagOpen = useCallback(() => {
-      setBagOpen((prevState) => !prevState);
-    }, []);
-
+  ({handleBagOpen, bagOpen, handleSidebar, bagData, total, handleRemoveBagItem }) => {
+  
     return (
       <>
         <Promo />
@@ -39,7 +34,6 @@ const HeadText = React.memo(
                     src={fangs}
                     className="fangs"
                     alt="fang"
-                    loading="lazy"
                   />
                 </div>
               </Link>

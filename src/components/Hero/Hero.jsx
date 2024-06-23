@@ -10,7 +10,7 @@ const Hero = React.memo(() => {
 
   const toggleReminder = useCallback(() => {
     setReminder((prevReminder) => !prevReminder);
-    !reminder ?alert("Set for AIR JORDAN 6 “Reverse Oreo”?") : alert("Cancel Reminder?")
+    !reminder ?alert("Set Reminder For AIR JORDAN 6 “Reverse Oreo”?") : alert("Cancel Reminder?")
   }, [reminder]);
 
   return (

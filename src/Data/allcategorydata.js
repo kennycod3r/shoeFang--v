@@ -1,16 +1,32 @@
+import Shoe1 from "../../src/Img/shoe1.webp";
+import Shoe2 from "../../src/Img/shoe2.webp";
+import Shoe3 from "../../src/Img/shoe3.webp";
+import Shoe4 from "../../src/Img/shoe4.webp";
+import Shoe5 from "../../src/Img/shoe5.webp";
+import Shoe6 from "../../src/Img/shoe6.webp";
+import Shoe7 from "../../src/Img/shoe7.webp";
+import Shoe8 from "../../src/Img/shoe8.webp";
+import Shoe9 from "../../src/Img/shoe9.webp";
+import Shoe10 from "../../src/Img/shoe10.webp";
+import Shoe11 from "../../src/Img/shoe11.webp";
+import Shoe12 from "../../src/Img/shoe12.webp";
+import Shoe13 from "../../src/Img/shoe13.webp";
+import Shoe14 from "../../src/Img/shoe14.webp";
+import Shoe15 from "../../src/Img/shoe15.webp";
+import Shoe16 from "../../src/Img/shoe16.webp";
+
 const allcategorydata = [
   {
     id: 1,
-    img: "https://pbs.twimg.com/media/GI6vLcaXIAArWzE?format=jpg&name=large",
+    img: Shoe1,
     title: "Nike Dunk Low Twist",
-    reviews: "(23 reviews)",
     description: "Wmns Dunk Low Twist",
     prevPrice: "150",
     newPrice: "90",
   },
   {
     id: 2,
-    img: "https://pbs.twimg.com/media/GJMjUlYaoAASnxr?format=jpg&name=large",
+    img: Shoe2,
     title: "Nike Air Max Plus",
     description: "Air Max Plus",
     prevPrice: "180",
@@ -18,16 +34,15 @@ const allcategorydata = [
   },
   {
     id: 3,
-    img: "https://pbs.twimg.com/media/GOM6thFXsAAM60D?format=jpg&name=large",
+    img: Shoe3,
     title: "The Nike Little Posite",
-    reviews: "(323 reviews)",
     description: "Little Posite",
     prevPrice: "160",
     newPrice: "110",
   },
   {
     id: 4,
-    img: "https://pbs.twimg.com/media/GN_XlCzaAAAiVG1?format=jpg&name=large",
+    img: Shoe4,
     title: "Dark Pony",
     description: "“Reverse Oreo”",
     prevPrice: "175",
@@ -35,7 +50,7 @@ const allcategorydata = [
   },
   {
     id: 5,
-    img: "https://pbs.twimg.com/media/GNdpmEcXEAA4DcI?format=jpg&name=large",
+    img: Shoe5,
     title: "marron nikes",
     description: "maroon nikes",
     prevPrice: "140",
@@ -43,7 +58,7 @@ const allcategorydata = [
   },
   {
     id: 6,
-    img: "https://pbs.twimg.com/media/GM1QXU-XsAA65bq?format=jpg&name=medium",
+    img: Shoe6,
     title: "Air Jordan 6",
     description: "“Olympic”",
     prevPrice: "200",
@@ -51,7 +66,7 @@ const allcategorydata = [
   },
   {
     id: 7,
-    img: "https://pbs.twimg.com/media/GMBiwGMXUAE70Al?format=jpg&name=large",
+    img: Shoe7,
     title: "New Balance 550",
     description: "golf",
     prevPrice: "120",
@@ -59,7 +74,7 @@ const allcategorydata = [
   },
   {
     id: 8,
-    img: "https://pbs.twimg.com/media/GLeCKbmXcAIUSyr?format=jpg&name=large",
+    img: Shoe8,
     title: "Jordan Tatum 2",
     description: "Sidewalk Chalk",
     prevPrice: "190",
@@ -67,7 +82,7 @@ const allcategorydata = [
   },
   {
     id: 9,
-    img: "https://pbs.twimg.com/media/GK6CPJwWUAAXFy9?format=jpg&name=large",
+    img: Shoe9,
     title: "Jordan Tatum 2",
     description: "Electric Green",
     prevPrice: "160",
@@ -75,7 +90,7 @@ const allcategorydata = [
   },
   {
     id: 10,
-    img: "https://pbs.twimg.com/media/GK5f5lGXwAACsEA?format=jpg&name=large",
+    img: Shoe10,
     title: "Corteiz x Nike Air Max 95",
     description: "Tour Yellow",
     prevPrice: "180",
@@ -83,7 +98,7 @@ const allcategorydata = [
   },
   {
     id: 11,
-    img: "https://pbs.twimg.com/media/GK08GOQXwAAFRUH?format=jpg&name=large",
+    img: Shoe11,
     title: "Maniére x Air Jordan 4",
     description: "Phantom",
     prevPrice: "170",
@@ -91,7 +106,7 @@ const allcategorydata = [
   },
   {
     id: 12,
-    img: "https://pbs.twimg.com/media/GKWJpDsWcAEJUY3?format=jpg&name=large",
+    img: Shoe12,
     title: "Nike Air Max 95",
     description: "Logo Pack",
     prevPrice: "155",
@@ -99,7 +114,7 @@ const allcategorydata = [
   },
   {
     id: 13,
-    img: "https://pbs.twimg.com/media/GJoOnxqXgAAAc9m?format=jpg&name=large",
+    img: Shoe13,
     title: "puma rs-x Efekt",
     description: "Cool Grey",
     prevPrice: "140",
@@ -107,7 +122,7 @@ const allcategorydata = [
   },
   {
     id: 14,
-    img: "https://pbs.twimg.com/media/GJnXxtKWEAE24Xe?format=jpg&name=large",
+    img: Shoe14,
     title: "Air Jordan 6",
     description: "“Bred”",
     prevPrice: "150",
@@ -115,7 +130,7 @@ const allcategorydata = [
   },
   {
     id: 15,
-    img: "https://pbs.twimg.com/media/GJnDBx7XgAAFQK4?format=jpg&name=large",
+    img: Shoe15,
     title: "The Air Jordan 3",
     description: "floral",
     prevPrice: "170",
@@ -123,7 +138,7 @@ const allcategorydata = [
   },
   {
     id: 16,
-    img: "https://pbs.twimg.com/media/GJdf8TAXEAIHw4J?format=jpg&name=large",
+    img: Shoe16,
     title: "Travis Scott x Air Jordan 1",
     description: "Medium olive",
     prevPrice: "200",

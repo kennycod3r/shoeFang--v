@@ -13,7 +13,7 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
   if (!bagSidebar) return null;
 
   return ReactDOM.createPortal(
-    <div className="Bag-item-section" style={{ opacity: 1, animationDelay: "2ms" }}>
+    <div data-lenis-prevent className="Bag-item-section" style={{ opacity: 1, animationDelay: "2ms", overflow:"scroll"}}>
       {bagData.length > 0 ? (
         <>
           {bagData.map((item, index) => (

@@ -1,4 +1,6 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { Outlet } from "react-router-dom";
+import useLenis from "../components/hooks/UseLennis";
 import Products from "../components/Products/Products";
 import Recommended from "../components/Recommended/Recommended";
 import Sidebar from "../components/Sidebar/Sidebar";
@@ -7,21 +9,28 @@ import HeadText from "../components/HeadText/HeadText";
 import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
 import HeroTwo from "../components/HeroTwo/HeroTwo";
-import { Outlet } from "react-router-dom";
+import BagItems from "../components/BagItems/BagItems";
 import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
 import AllCategoryCard from "../utility/AllCategoryCard";
 import { BagProvider } from "../context/BagContext";
 
 export default function ShoeFangTwo() {
+  useLenis();
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [bag, setBag] = useState([]);
   const [query, setQuery] = useState("");
   const [total, setTotal] = useState(0);
+  const [bagOpen, setBagOpen] = useState(false);
 
   const handleBag = useCallback((newBagData) => {
     setBag((prevState) => [...prevState, newBagData]);
     setTotal((prevState) => prevState + Number(newBagData.newPrice));
+  }, []);
+
+  const handleBagOpen = useCallback(() => {
+    setBagOpen((prevState) => !prevState);
   }, []);
 
   const handleRemoveBagItem = useCallback((imageId, newItemPrice) => {
@@ -86,14 +95,24 @@ export default function ShoeFangTwo() {
         <HeadText
           handleSidebar={handleSidebar}
           total={total}
+          handleBagOpen={handleBagOpen}
+          bagOpen={bagOpen}
           bagData={bag}
           handleRemoveBagItem={handleRemoveBagItem}
         />
-        <section className="body-section">
+
+        <section className={`body-section ${bagOpen ? "no-scroll" : ""}`}>
           <Outlet />
           <Hero />
           <Sidebar handleSidebar={handleSidebar} isOpen={isSidebarOpen} />
           <AllCategorySection handleBag={handleBag} />
+          <BagItems
+            total={total}
+            bagData={bag}
+            bagOpen={bagOpen}
+            handleBagOpen={handleBagOpen}
+            handleRemoveBagItem={handleRemoveBagItem}
+          />
           <Recommended
             handleClick={handleClick}
             query={query}
@@ -108,4 +127,3 @@ export default function ShoeFangTwo() {
     </BagProvider>
   );
 }
-

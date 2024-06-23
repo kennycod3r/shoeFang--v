@@ -1,4 +1,3 @@
-
 import React from "react";
 import HeadText from "../components/HeadText/HeadText";
 import "./Pages.css";
@@ -6,14 +5,15 @@ import { MdArrowOutward } from "react-icons/md";
 import { CiClock1 } from "react-icons/ci";
 import { FaFireAlt } from "react-icons/fa";
 import Footer from "../components/Footer/Footer";
-
+import useLenis from "../components/hooks/UseLennis";
+import image7 from "../Img/shoe8.webp";
 export default function Journal() {
+  useLenis();
   const articles = [
     {
       title: "Jordan Tatum 2 Sidewalk Chalk",
       date: "jun 21, 2024",
-      image:
-        "https://pbs.twimg.com/media/GLeCKbmXcAIUSyr?format=jpg&name=large",
+      image: image7,
       excerpt:
         "Discover the top sneaker trends for 2024. From retro revivals to futuristic designs, explore what's next in the world of sneakers.",
     },
@@ -45,7 +45,7 @@ export default function Journal() {
 
   return (
     <>
-      <HeadText/>
+      <HeadText />
       <div id="Journal">
         <div className="journal-headtext">
           <h1 className="journal-header">SNEAKER NEWS</h1>

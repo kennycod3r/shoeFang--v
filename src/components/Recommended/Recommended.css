@@ -10,6 +10,7 @@
   font-size: 20px;
   color: var(--primary);
   font-weight: bold;
+  overflow: hidden;
 }
 
 .recommended-query {
@@ -26,6 +27,7 @@
 
 .recommended-flex button {
   margin-right: 10px;
+  overflow: hidden;
 }
 
 .search-div {
@@ -41,8 +43,6 @@
 .relative-product {
   position: relative;
 }
-
-/* Color Grid Styles */
 .color-grid {
   display: flex;
   gap: 5px;
@@ -54,7 +54,7 @@
   position: relative;
   cursor: pointer;
   user-select: none;
-  padding-left: 25px; /* Adjust padding to fit the checkmark */
+  padding-left: 25px; 
 }
 
 .sidebar-label-container input {
@@ -62,8 +62,6 @@
   opacity: 0;
   cursor: pointer;
 }
-
-/* Checkmark Styles */
 .checkmark {
   position: absolute;
   height: 14px;
@@ -95,9 +93,9 @@
 
 .sidebar-label-container input:checked ~ .checkmark::after {
   display: block;
+  overflow: hidden;
 }
 
-/* Specific Color Styles */
 .all {
   background: linear-gradient(#005dff, crimson);
 }
@@ -107,7 +105,6 @@
   border: 0.1px solid black;
 }
 
-/* Responsive Styles */
 @media only screen and (max-width: 650px) {
   .checkmark {
     background-color: #a0a6a6;
