@@ -1,15 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const CloseButton = ({ onClick }) => (
-  <div className="close-button" onClick={onClick}>
+const CloseButton = ({ onClick, white, className }) => (
+  <div
+    className={`close-button ${className} ${white ? "bagitemclose" : ""}`}
+    onClick={onClick}
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width={white ? "40" : "32"}
+      height= "50"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
+      fill={white ? "#fff" : "black"}
+      stroke={white ? "#fff" : "currentColor"}
+      strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="feather feather-x"
@@ -20,4 +23,4 @@ const CloseButton = ({ onClick }) => (
   </div>
 );
 
-export default CloseButton
+export default CloseButton;

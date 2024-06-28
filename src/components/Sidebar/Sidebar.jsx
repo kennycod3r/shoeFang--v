@@ -2,7 +2,6 @@ import React, { memo, useCallback } from "react";
 import "./Sidebar.css";
 import CloseButton from "../../utility/CloseButton";
 import { Link } from "react-router-dom";
-import yeezyoff from "../../Img/60off.webp";
 import { createPortal } from "react-dom";
 
 const Sidebar = ({ handleSidebar, isOpen }) => {
@@ -14,10 +13,10 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
   if (!navigationBar) return null;
 
   return createPortal(
-    <section className={`sidebar-wrapper ${isOpen ? 'open' : ''}`}>
+    <section className={`sidebar-wrapper ${isOpen ? "slideInLeft" : ""}`}>
       <div className="sidebar">
-        <CloseButton onClick={handleClose} />
-        <span className="light-grey">NAVIGATION</span>
+        <CloseButton onClick={handleClose} white={"white"} />
+        <p className="menu">MENU</p>
         <ul className="sidebar-list">
           <li className="sidebar-item">
             <Link to="/" onClick={handleClose}>
@@ -25,23 +24,31 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
             </Link>
           </li>
           <li className="sidebar-item">
-            <Link to="/Journal/1" onClick={handleClose}>
+            <Link to="/Journal" onClick={handleClose}>
               <p>Journal</p>
             </Link>
           </li>
           <li className="sidebar-item">
-            <p>Favorite</p>
+          <Link to="/Sale" onClick={handleClose}>
+              <p>SALE</p>
+            </Link>
           </li>
-          <li className="sidebar-item">
-            <p>Sale</p>
-          </li>
+          
           <li className="sidebar-item">
             <p>Shop</p>
           </li>
         </ul>
-        <div className="yeezy-nav">
-          <img src={yeezyoff} alt="60% off" />
-        </div>
+        <ul className="bottom-sidebar flexCenter">
+          <li>
+            <p>SOCIALS</p>
+            <span>X</span>
+            <span>INSTAGRAM</span>
+          </li>
+          <li>
+            <span>CONTACT</span>
+            <span>DISCOUNT</span>
+          </li>
+        </ul>
       </div>
     </section>,
     navigationBar
@@ -49,4 +56,3 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
 };
 
 export default memo(Sidebar);
-

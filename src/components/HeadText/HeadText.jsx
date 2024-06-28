@@ -1,72 +1,65 @@
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Promo from "./Promo";
-import BagItems from "../BagItems/BagItems";
 import HamburgerMenu from "../../utility/HamburgerMenu";
 import fangs from "../../assets/fangs.svg";
 import "./HeadText.css";
-import accounticon from '../../assets/account.svg';
+import Bluepointer from "../../utility/Bluepointer";
+import Account from "../../utility/Account/Account";
 
-const HeadText = React.memo(
-  ({handleBagOpen, bagOpen, handleSidebar, bagData, total, handleRemoveBagItem }) => {
-  
-    return (
-      <>
-        <Promo />
-        <div className="flexCenter outer-div">
-          <div className="inner-div">
-            <div className="div-one" id="sidebar">
-              <HamburgerMenu onClick={handleSidebar} />
+const HeadText = React.memo(({ handleBagOpen, handleSidebar, bagData }) => {
+  return (
+    <>
+      <Promo />
+      <header className="flexCenter outer-div">
+        <nav className="inner-div">
+          <div className="div-one" id="sidebar">
+            <HamburgerMenu onClick={handleSidebar} />
+            <div className="show-mobile">
+              <Link to="/">HOME</Link>
+            </div>
+            <div className="show-mobile">
+              <Link to="/Journal">JOURNAL</Link>
+            </div>
+
+            <div className="show-mobile">
+              <Link to="/Sale">SALE</Link>
+            </div>
+            <div className="show-mobile">SHOP</div>
+          </div>
+
+          <div className="flexCenter div-two">
+            <Link to="/" className="head-text">
+              <h3>ShoeFang</h3>
               <div className="show-mobile">
-                <Link to="/Journal/1">JOURNAL</Link>
+                <img src={fangs} className="fangs" alt="fang" />
               </div>
-              <div className="show-mobile">ABOUT</div>
+            </Link>
+          </div>
 
-              <div className="show-mobile">SALE</div>
-              <div className="show-mobile">SHOP</div>
-            </div>
-
-            <div className="flexCenter div-two">
-              <Link to="/" className="head-text">
-                <h3>ShoeFang</h3>
-                <div className="show-mobile">
-                  <img
-                    src={fangs}
-                    className="fangs"
-                    alt="fang"
-                  />
-                </div>
-              </Link>
-            </div>
-
-            <div className="div-one div-three">
+          <div className="div-one div-three">
+            <>
+              <span className="show-mobile">
+                <Bluepointer />
+              </span>
               <div
                 className="flexSpaceBetween bag-link"
                 onClick={handleBagOpen}
               >
-               {total >= 0 ?  `BAG (${bagData.length})`: ` `}
+                {`BAG (${bagData.length})`}
               </div>
+            </>
 
-              <div className="show-mobile">ACCOUNT</div>
-              <div className="acc-icon show-mobile">
-                <img src={accounticon} alt="account" className="account-svg" />
-              </div>
+            <div className=" show-mobile sm-account">
+              <div>ACCOUNT</div>
+              <Account />
             </div>
           </div>
-        </div>
-        <div id="detail"></div>
-        {bagOpen && (
-          <BagItems
-            bagData={bagData}
-            bagOpen={bagOpen}
-            total={total}
-            handleBagOpen={handleBagOpen}
-            handleRemoveBagItem={handleRemoveBagItem}
-          />
-        )}
-      </>
-    );
-  }
-);
+        </nav>
+      </header>
+      <div id="detail"></div>
+    </>
+  );
+});
 
 export default HeadText;

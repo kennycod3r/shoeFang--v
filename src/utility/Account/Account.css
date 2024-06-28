@@ -1,0 +1,41 @@
+.account {
+  width: 100px;
+  position: fixed;
+  right: 0;
+  background-color: var(--bodyColor);
+  z-index: 9;
+  top: 3em;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  box-shadow: var(--box-shadow);
+}
+
+.account .circle-acc {
+  border-radius: 50%;
+  max-height: 80px;
+  max-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-acc img {
+  border-radius: 50%;
+}
+
+.log {
+  color: #3c443f;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.log:hover{
+    color: rgb(32, 32, 71);
+}

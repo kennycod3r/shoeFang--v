@@ -22,6 +22,10 @@ export default function BagItem({
     "M 7.5 / W 9",
   ];
 
+  const sendData = () => {
+    handleRemoveBagItem(imageId, newItemPrice);
+  };
+
   const handleItemCount = (operation) => {
     setCount((prevCount) => {
       if (operation === "decrement" && prevCount > 1) {
@@ -44,7 +48,7 @@ export default function BagItem({
       <div className="bag-img-div">
         <img className="purchase-img" src={imageUrl} alt="shoe box" />
         <div className="remove-item-div">
-          <button onClick={() => handleRemoveBagItem(imageId, newItemPrice)}>
+          <button onClick={sendData}>
             <p>Remove</p> <CiTrash className="remove-item-btn" />
           </button>
         </div>

@@ -1,15 +1,15 @@
-import './SearchInput.css';
+import "./SearchInput.css";
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const SearchInput = ({ query, handleInputChange }) => {
   return (
-    <div className='search-container'>
-      <input 
-        type='text' 
-        placeholder='Search brand or names'
-        className='search-input'
-        value={query}  
+    <div className="search-container">
+      <input
+        type="text"
+        placeholder="Search brand or names"
+        className="search-input"
+        value={query}
         onChange={handleInputChange}
       />
     </div>

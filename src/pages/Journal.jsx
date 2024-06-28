@@ -1,15 +1,14 @@
 import React from "react";
-import HeadText from "../components/HeadText/HeadText";
-import "./Pages.css";
-import arrowUp from '../assets/arrowUp.svg';
-import { MdArrowOutward } from "react-icons/md";
-import clock from '../assets/clock.svg';
-import hot from '../assets/hot.svg';
-import Footer from "../components/Footer/Footer";
 import useLenis from "../components/hooks/UseLennis";
+import "./Pages.css";
+import clock from "../assets/clock.svg";
+import hot from "../assets/hot.svg";
 import image7 from "../Img/shoe8.webp";
+import Bluepointer from "../utility/Bluepointer";
+
 export default function Journal() {
   useLenis();
+
   const articles = [
     {
       title: "Jordan Tatum 2 Sidewalk Chalk",
@@ -45,47 +44,48 @@ export default function Journal() {
   ];
 
   return (
-    <>
-      <HeadText />
-      <div id="Journal">
-        <div className="journal-headtext">
-          <h1 className="journal-header">SNEAKER NEWS</h1>
-        </div>
+    <div id="Journal">
+      <div className="journal-headtext">
+        <h1 className="journal-header">SNEAKER NEWS</h1>
+      </div>
 
-        <div className="journal-intro">
-          <p>
-            Welcome to the Sneaker News Journal! Here you'll find the latest
-            updates, trends, and tips from the world of sneakers. Stay ahead of
-            the game with our expert insights and in-depth articles.
-          </p>
-        </div>
+      <div className="journal-intro">
+        <p>
+          Welcome to the Sneaker News Journal! Here you'll find the latest
+          updates, trends, and tips from the world of sneakers. Stay ahead of
+          the game with our expert insights and in-depth articles.
+        </p>
+      </div>
 
-        <div className="journal-grid">
-          {articles.map((article, index) => (
-            <div key={index} className="journal-article">
-              <img src={article.image} alt={article.title} />
-              <div className="dateWrapper">
-                <div className="dateWrapper-inner">
-                  <div className="flexBase"><img src={clock} alt="clock" className="clocksvg"/></div>
-                  {article.date}
+      <div className="journal-grid">
+        {articles.map((article, index) => (
+          <div key={index} className="journal-article">
+            <img src={article.image} alt={article.title} />
+            <div className="dateWrapper">
+              <div className="dateWrapper-inner">
+                <div className="flexBase">
+                  <img src={clock} alt="clock" className="clocksvg" />
                 </div>
-                <div  className="dateWrapper-inner">
-                  <div className="flexBase"><img src={hot} alt="fire"/></div>
-                  Hot
-                </div>
+                {article.date}
               </div>
-              <div className="j-art-text">
-                <h2>{article.title}</h2>
-                <p>{article.excerpt}</p>
-                <a href={`/journal/${index + 1}`} className="read-more">
-                <p>Read more</p> <div className="animateLink"><img src={arrowUp} alt="arrow" className="arrowUp"/></div>
-                </a>
+              <div className="dateWrapper-inner">
+                <div className="flexBase">
+                  <img src={hot} alt="fire" />
+                </div>
+                Hot
               </div>
             </div>
-          ))}
-        </div>
+            <div className="j-art-text">
+              <h2>{article.title}</h2>
+              <p>{article.excerpt}</p>
+              <a href={`/journal`} className=" article read-more">
+                <p>Read more</p>
+                <Bluepointer />
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
-      <Footer />
-    </>
+    </div>
   );
 }

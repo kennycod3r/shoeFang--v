@@ -1,46 +1,22 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useState, useCallback, useMemo } from "react";
+import { useOutletContext } from "react-router-dom";
 import useLenis from "../components/hooks/UseLennis";
 import Products from "../components/Products/Products";
 import Recommended from "../components/Recommended/Recommended";
-import Sidebar from "../components/Sidebar/Sidebar";
-import storeData from "../Data/Data";
-import HeadText from "../components/HeadText/HeadText";
 import Hero from "../components/Hero/Hero";
-import Footer from "../components/Footer/Footer";
+import storeData from '../Data/Data';
 import HeroTwo from "../components/HeroTwo/HeroTwo";
 import BagItems from "../components/BagItems/BagItems";
-import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
 import AllCategoryCard from "../utility/AllCategoryCard";
-import { BagProvider } from "../context/BagContext";
+import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
 
 export default function ShoeFangTwo() {
-  useLenis();
+  const { bag, total, appHandleBag, handleRemoveBagItem, handleBagOpen, bagOpen } = useOutletContext();
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useLenis(); // Ensure custom hook is used correctly
+console.log("rendered")
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [bag, setBag] = useState([]);
   const [query, setQuery] = useState("");
-  const [total, setTotal] = useState(0);
-  const [bagOpen, setBagOpen] = useState(false);
-
-  const handleBag = useCallback((newBagData) => {
-    setBag((prevState) => [...prevState, newBagData]);
-    setTotal((prevState) => prevState + Number(newBagData.newPrice));
-  }, []);
-
-  const handleBagOpen = useCallback(() => {
-    setBagOpen((prevState) => !prevState);
-  }, []);
-
-  const handleRemoveBagItem = useCallback((imageId, newItemPrice) => {
-    setBag((prevState) => prevState.filter((item) => item.imageId !== imageId));
-    setTotal((prevState) => prevState - Number(newItemPrice));
-  }, []);
-
-  const handleSidebar = useCallback(() => {
-    setIsSidebarOpen((prevState) => !prevState);
-  }, []);
 
   const handleInputChange = useCallback((event) => {
     setQuery(event.target.value);
@@ -84,46 +60,34 @@ export default function ShoeFangTwo() {
         newPrice={newPrice}
         prevPrice={prevPrice}
         imageId={id}
-        handleBag={handleBag}
+        appHandleBag={appHandleBag}
       />
     ));
-  }, [filteredItems, selectedCategory, handleBag, query]);
+  }, [filteredItems, selectedCategory, query, appHandleBag]);
 
   return (
-    <BagProvider value={{ bag, total, handleBag, handleRemoveBagItem }}>
-      <div id="detail">
-        <HeadText
-          handleSidebar={handleSidebar}
+    <div id="detail">
+      <section className={`body-section ${bagOpen ? "no-scroll" : ""}`}>
+        <Hero />
+        <Recommended
+          handleClick={handleClick}
+          query={query}
+          handleChange={handleRadioChange}
+          handleInputChange={handleInputChange}
+        />
+        <Products result={filteredData} />
+        
+        <BagItems
           total={total}
-          handleBagOpen={handleBagOpen}
-          bagOpen={bagOpen}
           bagData={bag}
+          bagOpen={bagOpen}
+          handleBagOpen={handleBagOpen}
           handleRemoveBagItem={handleRemoveBagItem}
         />
-
-        <section className={`body-section ${bagOpen ? "no-scroll" : ""}`}>
-          <Outlet />
-          <Hero />
-          <Sidebar handleSidebar={handleSidebar} isOpen={isSidebarOpen} />
-          <AllCategorySection handleBag={handleBag} />
-          <BagItems
-            total={total}
-            bagData={bag}
-            bagOpen={bagOpen}
-            handleBagOpen={handleBagOpen}
-            handleRemoveBagItem={handleRemoveBagItem}
-          />
-          <Recommended
-            handleClick={handleClick}
-            query={query}
-            handleChange={handleRadioChange}
-            handleInputChange={handleInputChange}
-          />
-          <Products result={filteredData} />
-          <HeroTwo />
-        </section>
-        <Footer />
-      </div>
-    </BagProvider>
+        
+        <HeroTwo />
+        <AllCategorySection appHandleBag={appHandleBag} />
+      </section>
+    </div>
   );
 }

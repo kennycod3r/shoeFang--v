@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 
 const Products = ({ result }) => {
   return (
+    <>
     <section className="category-section">
       {result}
     </section>
+    </>
   );
 };
 
@@ -14,3 +16,4 @@ Products.propTypes = {
 };
 
 export default Products;
+

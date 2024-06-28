@@ -4,7 +4,7 @@ import Sponsor from "../Sponsors/Sponsor";
 import allcategorydata from "../../Data/allcategorydata";
 import "./AllCategory.css";
 
-const AllCategorySection = ({ handleBag }) => {
+const AllCategorySection = ({ appHandleBag }) => {
   return (
     <>
       <Sponsor />
@@ -17,7 +17,7 @@ const AllCategorySection = ({ handleBag }) => {
             newPrice={item.newPrice}
             prevPrice={item.prevPrice}
             description={item.description}
-            handleBag={handleBag}
+            appHandleBag={appHandleBag}
             imageId={item.id}
           />
         ))}

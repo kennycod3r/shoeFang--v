@@ -12,7 +12,7 @@
   text-align: center;
   margin-bottom: 20px;
 }
-.clocksvg{
+.clocksvg {
   object-fit: contain;
 }
 .journal-header {
@@ -87,31 +87,19 @@
 }
 
 .journal-article .read-more {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: 10px;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: bold;
-  gap: 3px;
+  padding-bottom: 10px;
 }
 
-.arrowUp{
+.arrowUp {
   padding-top: 18px;
 }
-#checkoutForm{
-  position: fixed;
-  top: 0;
-  left: 0;
+#checkoutForm {
   background-color: var(--bodyColor);
-  z-index: 99;
-  height: 100%;
-  overflow-y: auto;
+  min-height: 100%;
+  overflow: hidden;
 }
 
-.checkout-form{
+.checkout-form {
   padding: 20px;
 }
 
@@ -124,7 +112,6 @@
   border-radius: 10px;
   align-content: space-between;
   align-items: start;
-
 }
 .checkout-form-inner {
   display: grid;
@@ -208,6 +195,25 @@ form button:hover {
   font-weight: bolder;
 }
 
+.next-btn {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  background-color: #181818;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.next-btn:hover{
+  opacity: 0.9;
+}
 @media only screen and (max-width: 650px) {
   .journal-grid {
     grid-template-columns: auto;

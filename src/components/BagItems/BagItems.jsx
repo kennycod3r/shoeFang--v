@@ -4,16 +4,23 @@ import { Link } from "react-router-dom";
 import BagItem from "../../utility/BagItem";
 import { GiShoppingCart } from "react-icons/gi";
 import CloseButton from "../../utility/CloseButton";
-import "./BagItems.css";
 
-const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem }) => {
+const BagItems = ({
+  bagOpen,
+  total,
+  handleBagOpen,
+  bagData,
+  handleRemoveBagItem,
+}) => {
+  const bagSidebar = document.getElementById("bagSidebar");
+
   if (!bagOpen) return null;
 
-  const bagSidebar = document.getElementById("bagSidebar");
-  if (!bagSidebar) return null;
-
   return ReactDOM.createPortal(
-    <div data-lenis-prevent className="Bag-item-section" style={{ opacity: 1, animationDelay: "2ms", overflow:"scroll"}}>
+    <div
+      data-lenis-prevent
+      className={`Bag-item-section ${bagOpen ? "slideInRight" : ""}`}
+    >
       {bagData.length > 0 ? (
         <>
           {bagData.map((item, index) => (
@@ -31,6 +38,15 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
               size={item.size}
             />
           ))}
+          <div className="total-div">
+            <p>Subtotal</p>
+            <p className="total-price">£{total}.00</p>
+          </div>
+          <button className="checkout-btn">
+            <Link to="/checkout" className="btn-link" onClick={handleBagOpen}>
+              CHECKOUT
+            </Link>
+          </button>
         </>
       ) : (
         <div className="bag-empty">
@@ -39,23 +55,14 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
             <GiShoppingCart className="bag-empty-cart" />
           </div>
           <p>Oops! Looks like your bag is empty.</p>
-          <Link to="/" className="cont-shopping btn-link" onClick={handleBagOpen}>
+          <Link
+            to="/"
+            className="cont-shopping btn-link"
+            onClick={handleBagOpen}
+          >
             CONTINUE SHOPPING
           </Link>
         </div>
-      )}
-      {bagData.length > 0 && (
-        <>
-          <div className="total-div">
-            <p>Subtotal</p>
-            <p className="total-price">£{total}.00</p>
-          </div>
-          <button className="checkout-btn" onClick={handleBagOpen}>
-            <Link to="/checkout" className="btn-link">
-              CHECKOUT
-            </Link>
-          </button>
-        </>
       )}
     </div>,
     bagSidebar
@@ -63,3 +70,4 @@ const BagItems = ({ total, bagData, bagOpen, handleBagOpen, handleRemoveBagItem 
 };
 
 export default BagItems;
+

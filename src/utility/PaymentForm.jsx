@@ -32,13 +32,17 @@ const PaymentForm = () => {
   ];
 
   const years = [];
-  for (let i = new Date().getFullYear(); i <= new Date().getFullYear() + 3; i++) {
+  for (
+    let i = new Date().getFullYear();
+    i <= new Date().getFullYear() + 3;
+    i++
+  ) {
     years.push({ value: i.toString().slice(-2), label: i.toString() });
   }
 
   return (
     <>
-      <label htmlFor="cardNumber">Payment Details</label>
+      <label htmlFor="cardNumber">Card Number</label>
       <input
         id="cardNumber"
         name="cardNumber"
@@ -48,53 +52,55 @@ const PaymentForm = () => {
         onChange={handleChange}
         autoComplete="cc-number"
       />
+
       <div style={{ display: "flex", gap: "10px" }}>
         <div>
-          <label htmlFor="expiryMonth">Expiry Date (MM/YY)</label>
-          <div style={{ display: "flex" }}>
-            <select
-              id="expiryMonth"
-              name="expiryMonth"
-              value={paymentValues.expiryMonth}
-              onChange={handleChange}
-              autoComplete="cc-exp-month"
-            >
-              <option value="">MM</option>
-              {months.map((month) => (
-                <option key={month.value} value={month.value}>
-                  {month.label}
-                </option>
-              ))}
-            </select>
-
-            <select
-              id="expiryYear"
-              name="expiryYear"
-              value={paymentValues.expiryYear}
-              onChange={handleChange}
-              autoComplete="cc-exp-year"
-            >
-              <option value="">YY</option>
-              {years.map((year) => (
-                <option key={year.value} value={year.value}>
-                  {year.label}
-                </option>
-              ))}
-            </select>
-          </div>
+          <label htmlFor="expiryMonth">Expiry Month</label>
+          <select
+            id="expiryMonth"
+            name="expiryMonth"
+            value={paymentValues.expiryMonth}
+            onChange={handleChange}
+            autoComplete="cc-exp-month"
+          >
+            <option value="">MM</option>
+            {months.map((month) => (
+              <option key={month.value} value={month.value}>
+                {month.label}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div>
-          <label htmlFor="cvv">CVV</label>
-          <input
-            id="cvv"
-            name="cvv"
-            type="text"
-            value={paymentValues.cvv}
+          <label htmlFor="expiryYear">Expiry Year</label>
+          <select
+            id="expiryYear"
+            name="expiryYear"
+            value={paymentValues.expiryYear}
             onChange={handleChange}
-            autoComplete="cc-csc"
-          />
+            autoComplete="cc-exp-year"
+          >
+            <option value="">YY</option>
+            {years.map((year) => (
+              <option key={year.value} value={year.value}>
+                {year.label}
+              </option>
+            ))}
+          </select>
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="cvv">CVV</label>
+        <input
+          id="cvv"
+          name="cvv"
+          type="text"
+          value={paymentValues.cvv}
+          onChange={handleChange}
+          autoComplete="cc-csc"
+        />
       </div>
     </>
   );

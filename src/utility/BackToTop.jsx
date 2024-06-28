@@ -1,29 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from "react";
 
-const BackToTop = () => {
+const BackToTop = ({ lenis }) => {
+  console.log("BackToTop component rendered");
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
+  const toggleVisibility = useCallback(() => {
     if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
-  };
+  }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
+  const scrollToTop = useCallback(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1 });
+    } else {
+      window.scrollTo({
+        top: 0,
+      });
+    }
+  }, [lenis]);
 
   useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
-  }, []);
+  }, [toggleVisibility]);
 
   return (
     <div className="back-to-top">

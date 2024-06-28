@@ -7,11 +7,43 @@
   --background-blend: darken;
   --background-color: rgba(34, 33, 33, 0.277);
 }
+
+#error-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+b{
+  color: #E34248;
+}
+.errorclose{
+  background-color: #E34248;
+  border-radius: 50%;
+  height: 40px;
+  padding: 10px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.erobot .erobot-img{
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
 del {
   color: #7b7b7b;
 }
 html.lenis {
   height: auto;
+}
+html.has-scroll-smooth {
+  overflow: hidden;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -22,6 +54,10 @@ html.lenis {
 }
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+  height: 100vh;
 }
 
 * {
@@ -46,7 +82,6 @@ body {
   display: flex;
   flex-direction: column;
   font-size: clamp(16px, 1.2vw, 19px);
-  
 }
 
 a {
@@ -80,6 +115,8 @@ li {
 
 .headtext-small {
   font-size: medium;
+  padding: 0;
+  margin: 0;
 }
 
 .btns {
@@ -131,17 +168,15 @@ li {
   transform: rotate(0deg);
 }
 
-.animateLink:hover {
-  animation: animateArrow;
-  animation-duration: .4s;
-}
+
+
 
 @keyframes animateArrow {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(20deg);
+    transform: rotate(45deg);
   }
 }
 

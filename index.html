@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lenis lenis-smooth" style="--vh: 5.98px; cursor: auto">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SHOE website. buy Authentic nike shoes" />
+    <meta property="og:title" content="SHOEFANG" />
+    <meta property="og:site_name" content="SHOEFANG" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:title" content="SHOEFANG" />
+    <meta property="twitter:description" content="buy Authentic shoes." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="google" content="notranslate" />
+    <meta property="og:locale" content="en" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Analytics Accepted");
+      });
+    </script>
+    <style>
+      @font-face {
+        font-family: '"Inter", sans-serif';
+        src: url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      }
+    </style>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SHOEFANG</title>
     <link rel="icon" href="/webLogo.svg" type="image/svg+xml" />
     <link rel="preload" href="./src/index.css" as="style" />
-    <link rel="icon" type="image/svg+xml" sizes="30x30" href="/webLogo.svg" />
     <link
       rel="stylesheet"
       href="./src/index.css"
@@ -15,79 +39,18 @@
     />
     <noscript><link rel="stylesheet" href="./src/index.css" /></noscript>
     <style>
-      .hero {
-        min-height: 70svh;
-        min-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        background-position: center;
-        background-repeat: repeat;
-        background-size: contain;
-      }
-
-      .hero-inner-section {
-        background-color: #f5f5f2;
-        color: var(--text-color);
-        min-height: 60%;
-        max-width: 80%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 2px;
-      }
-
-      .yzy {
-        width: 100%;
-      }
-
-      .hero-sales-text {
-        padding: 2.5em;
-        display: grid;
-      }
-
-      .article {
-        padding: 18px 0;
-        font-size: 16px;
-        color: var(--text-color);
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        gap: 2px;
-        align-items: center;
-        line-height: 24px;
-        text-decoration: underline;
-        text-transform: uppercase;
-      }
-
-      .relative-img {
-        position: relative;
-      }
-
-      .reminder-container p {
-        position: absolute;
-        bottom: 3.5%;
-        left: 8.5%;
-        transition: all 0.4s ease;
-        padding: 2px 13px;
-        padding-left: 40px;
-        border-radius: 5px;
-        background-color: #0d0d0da9;
-        color: #f5f5f2;
-        z-index: 2;
-        font-weight: 500;
-      }
-
       .flexSpaceBetween {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
+
       .flexCenter {
         display: flex;
         align-items: center;
         justify-content: center;
       }
+
       .flexSpaceAround {
         display: flex;
         align-items: center;
@@ -96,9 +59,10 @@
 
       .flexBase {
         display: flex;
-        align-items: baseline;
+        align-items: flex-end;
       }
-      @media only screen and (max-width: 650px) {
+
+      @media only screen and (max-width: 670px) {
         .hero {
           background-color: rgba(34, 33, 33, 0.387);
           text-align: center;
@@ -113,9 +77,8 @@
         }
 
         .article {
-          line-height: normal;
           padding: 0;
-          border-bottom: none;
+
           text-decoration: none;
           font-size: 15px;
         }
@@ -158,11 +121,283 @@
         top: 3%;
         margin-left: 10px;
       }
+
+      @keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .animateFade {
+        animation: opacity 2.5s ease;
+      }
+
+      .slideInRight {
+        animation: slideInRight 0.7s ease forwards;
+        will-change: transform;
+      }
+
+      .slideInLeft {
+        animation: slideInLeft 0.7s ease backwards;
+        will-change: transform;
+      }
+
+      .Bag-item-section {
+        min-width: 30%;
+        max-width: 25%;
+        height: 100%;
+        pointer-events: all;
+        position: fixed;
+        top: 0;
+        right: 0;
+        border-right: 2px solid #e5e5e5;
+        box-shadow: var(--box-shadow);
+        z-index: 95;
+        display: flex;
+        overflow-y: scroll;
+        flex-direction: column;
+        padding: 12px;
+        padding-top: 2.5em;
+        text-align: left;
+        transform: translateX(100%);
+        background-color: #f5f5f2;
+      }
+
+      @keyframes slideInRight {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .Bag-item-section h2 {
+        color: var(--primary);
+        margin-top: 0.3em;
+        font-weight: 600;
+        font-size: 2em;
+        text-transform: uppercase;
+      }
+
+      .Bag-item-section p {
+        font-weight: bolder;
+      }
+
+      .purchase-img {
+        max-height: 23.5em;
+        object-fit: cover;
+      }
+
+      .bag-img-div {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .remove-item-div {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 10px;
+        right: 10px;
+      }
+
+      .remove-item-div button {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        border: none;
+        outline: none;
+        padding: 5px 10px;
+        justify-content: space-between;
+        border-radius: 5px;
+        background-color: #0d0d0da9;
+        color: var(--bodyColor);
+        box-shadow: var(--box-shadow);
+        font-weight: 500;
+        transition: var(--animationSmooth);
+        text-align: center;
+        font-weight: 300;
+      }
+
+      .remove-item {
+        color: #bfbfbf;
+      }
+
+      .remove-item-btn {
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        transition: var(--animationSmooth);
+      }
+
+      .remove-item-div button:hover {
+        transform: scale(1.1);
+        background-color: #0d0d0d;
+      }
+
+      .shoeSizes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: small;
+      }
+
+      .shoeSizes li {
+        border: 1px solid rgb(48, 48, 48);
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 5px 0;
+        background-color: rgb(237, 237, 237);
+        font-size: 10px;
+      }
+
+      .shoeSizes li:hover {
+        background-color: rgba(220, 226, 227, 0.846);
+      }
+
+      .Bag-item-section::-webkit-scrollbar {
+        display: none;
+      }
+
+      .bag-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding-top: 20px;
+        background-color: var(--bodyColor);
+        font-size: 16px;
+      }
+
+      .item-count {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        display: grid;
+        margin-left: 10px;
+        grid-template-columns: 2fr 2fr 2fr;
+        justify-items: center;
+        font-size: smaller;
+        font-weight: bolder;
+      }
+
+      .bag-empty-div {
+        width: 100%;
+      }
+
+      .bag-empty-cart {
+        width: 100%;
+        min-height: 150px;
+      }
+
+      .bag-btn {
+        background-color: rgba(33, 33, 33, 0.87);
+        width: 100%;
+        color: var(--bodyColor);
+        text-align: center;
+        padding: 0 10px;
+        cursor: pointer;
+      }
+
+      .total-div {
+        font-size: 1em;
+        font-weight: 600;
+        display: flex;
+        margin-top: 20px;
+        gap: 1.2em;
+        text-transform: uppercase;
+        color: #303030;
+        line-height: 1.1;
+      }
+
+      .checkout-btn {
+        margin: 10px 0;
+        background-color: var(--primary);
+        border: none;
+        min-height: 50px;
+        font-size: 17px;
+        font-weight: bold;
+        color: var(--bodyColor);
+      }
+
+      .btn-link {
+        min-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .bag-empty {
+        text-align: center;
+        color: var(--linkColor);
+        display: grid;
+        height: 100%;
+        align-items: center;
+      }
+
+      .cont-shopping {
+        letter-spacing: 0.5px;
+        text-decoration: underline;
+        margin-top: 20px;
+        color: var(--primary);
+      }
+      .scroll-down {
+        display: flex;
+        gap: 1em;
+        color: #fff;
+        background-color: #0d0d0d7b;
+        position: fixed;
+        top: 0.5em;
+        padding: 5px 1em;
+        border-radius: 5px;
+        z-index: 13;
+      }
+
+      @media only screen and (max-width: 650px) {
+        .Bag-item-section {
+          min-width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-image: url(../../Img/nikeLogoImg.webp);
+        }
+        .bag-item {
+          padding: 10px;
+          width: 20em;
+          box-shadow: var(--box-shadow);
+        }
+        .checkout-btn {
+          width: 100%;
+          padding: 10px 1em;
+        }
+        .bag-empty {
+          background-color: var(--bodyColor);
+          padding: 0 3em;
+        }
+      }
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <div id="CheckoutPage"></div>
     <div id="bagSidebar"></div>
     <div id="navigationBar"></div>
     <script type="module" defer src="/src/main.jsx"></script>

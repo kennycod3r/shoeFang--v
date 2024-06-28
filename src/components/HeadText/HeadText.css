@@ -17,6 +17,9 @@
   font-size: 11px;
 }
 
+.sm-account:hover .account {
+  opacity: 1;
+}
 .x {
   position: absolute;
   right: 7px;
@@ -167,7 +170,7 @@
   .dontSbs {
     display: block;
   }
-  .div-two{
+  .div-two {
     margin-left: 0;
   }
   .show-mobile {

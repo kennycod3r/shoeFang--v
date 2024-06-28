@@ -1,6 +1,4 @@
-
-
-.search-input{
+.search-input {
   padding: 10px 20px;
   border: none;
   outline: none;
@@ -12,15 +10,13 @@
   border: 0.6px solid #878585;
 }
 
-
-
-@media only screen and (max-width:650px){
-  .search-input{
-      display: none;
+@media only screen and (max-width: 650px) {
+  .search-input {
+    display: none;
   }
 }
-@media only screen and (max-width:770px){
-  .search-input{
-      display: none;
+@media only screen and (max-width: 770px) {
+  .search-input {
+    display: none;
   }
 }

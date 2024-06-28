@@ -4,9 +4,12 @@ const Discount = ({ newPrice, prevPrice }) => {
   const receivedNewPrice = Number(newPrice);
   const receivedPrevPrice = Number(prevPrice);
 
-  const discount = receivedPrevPrice > 0 
-    ? Math.floor(((receivedPrevPrice - receivedNewPrice) / receivedPrevPrice) * 100) 
-    : 0;
+  const discount =
+    receivedPrevPrice > 0
+      ? Math.floor(
+          ((receivedPrevPrice - receivedNewPrice) / receivedPrevPrice) * 100
+        )
+      : 0;
 
   return (
     <div className="img-promo-div flexBase">
