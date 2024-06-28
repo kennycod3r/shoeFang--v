@@ -1,9 +1,17 @@
 import React, { useState, useCallback } from "react";
 import { BsCartCheckFill } from "react-icons/bs";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import cartEmpty from "../assets/cartempty.svg";
 
-const AddBagComponent = ({ handleBagData, title, newPrice, prevPrice, image, imageId, className }) => {
+const AddBagComponent = ({
+  handleBagData,
+  title,
+  newPrice,
+  prevPrice,
+  image,
+  imageId,
+  className,
+}) => {
   const [bagged, setBagged] = useState(false);
 
   const handleBag = useCallback(() => {

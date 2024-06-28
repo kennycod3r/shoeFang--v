@@ -7,7 +7,6 @@
   padding: 20px;
   overflow: hidden;
 }
-
 .journal-headtext {
   text-align: center;
   margin-bottom: 20px;
@@ -157,7 +156,6 @@ form button {
 form button:hover {
   background-color: var(--primaryGreen);
 }
-
 .checkout-card {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -175,11 +173,9 @@ form button:hover {
 .checkout-card p {
   font-size: 14px;
 }
-
 .checkout-card img {
   width: 100px;
 }
-
 .white-overlay li {
   border-bottom: 1px dashed #ccc;
   padding: 15px;
@@ -190,11 +186,9 @@ form button:hover {
   font-size: small;
   color: rgb(43, 43, 43);
 }
-
 .white-overlay .price {
   font-weight: bolder;
 }
-
 .next-btn {
   position: absolute;
   right: 20px;
@@ -210,7 +204,6 @@ form button:hover {
   justify-content: center;
   overflow: hidden;
 }
-
 .next-btn:hover{
   opacity: 0.9;
 }

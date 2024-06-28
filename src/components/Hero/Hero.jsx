@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import AddBagComponent from "../../utility/AddBagComponent";
-import nikeLogoImg from "../../Img/nikeLogoImg.webp";
+import nikeLogoImg from "../../Img/nikeLogoImg.jpg";
 import Bluepointer from "../../utility/Bluepointer";
 import "../../App.css";
 

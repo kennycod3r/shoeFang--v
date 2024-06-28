@@ -3,7 +3,7 @@ import useLenis from "../components/hooks/UseLennis";
 import "./Pages.css";
 import clock from "../assets/clock.svg";
 import hot from "../assets/hot.svg";
-import image7 from "../Img/shoe8.webp";
+import image7 from "../Img/shoe8.jpg";
 import Bluepointer from "../utility/Bluepointer";
 
 export default function Journal() {

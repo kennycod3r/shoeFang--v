@@ -8,7 +8,7 @@ const CloseButton = ({ onClick, white, className }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={white ? "40" : "32"}
-      height= "50"
+      height="50"
       viewBox="0 0 24 24"
       fill={white ? "#fff" : "black"}
       stroke={white ? "#fff" : "currentColor"}
