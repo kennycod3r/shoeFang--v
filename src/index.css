@@ -8,7 +8,7 @@
   --background-color: rgba(34, 33, 33, 0.277);
 }
 
-#error-page{
+#error-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,11 +18,11 @@
   text-align: center;
 }
 
-b{
-  color: #E34248;
+b {
+  color: #e34248;
 }
-.errorclose{
-  background-color: #E34248;
+.errorclose {
+  background-color: #e34248;
   border-radius: 50%;
   height: 40px;
   padding: 10px;
@@ -31,7 +31,7 @@ b{
   align-items: center;
   justify-content: center;
 }
-.erobot .erobot-img{
+.erobot .erobot-img {
   height: 100px;
   width: 100px;
   object-fit: contain;
@@ -111,6 +111,7 @@ li {
 
 .hero-headtext {
   font-size: 3em;
+  max-height: 100px;
 }
 
 .headtext-small {
@@ -168,9 +169,6 @@ li {
   transform: rotate(0deg);
 }
 
-
-
-
 @keyframes animateArrow {
   0% {
     transform: rotate(0deg);
@@ -180,10 +178,11 @@ li {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 850px) {
   .hero-headtext {
     font-size: 2em;
     font-weight: bold;
+    margin-bottom: 20px;
   }
 
   .headtext-small {

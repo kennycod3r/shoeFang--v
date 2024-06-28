@@ -20,7 +20,6 @@ const Hero = React.memo(
     appHandleBag,
     imageId,
     salesImg,
-    sales,
   }) => {
     const [reminder, setReminder] = useState(false);
 
@@ -55,7 +54,7 @@ const Hero = React.memo(
         <div className="hero-inner-section">
           <div className="hero-sales-text">
             <h2 className="hero-headtext">{defaultTitle}</h2>
-            <p className="hero-price headtext-small">{defaultItemPrice}</p>
+           {handleNext && <p className="hero-price headtext-small">{defaultItemPrice}</p>}
             <div className="aligned-paragraphs">
               {defaultDescription.map((text, index) => (
                 <p key={index}>{text}</p>
