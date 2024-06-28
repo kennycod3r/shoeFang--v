@@ -78,7 +78,7 @@ export default function Journal() {
             <div className="j-art-text">
               <h2>{article.title}</h2>
               <p>{article.excerpt}</p>
-              <a href={`/journal`} className=" article read-more">
+              <a href={`/journal`} className="article read-more">
                 <p>Read more</p>
                 <Bluepointer />
               </a>

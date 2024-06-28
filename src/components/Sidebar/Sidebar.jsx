@@ -18,9 +18,9 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
       className={`sidebar-wrapper ${isOpen ? "slideInLeft" : ""}`}
     >
       <div className={`sidebar`}>
-        <CloseButton onClick={handleClose} white={"white"} />
         <p className="menu">MENU</p>
         <ul className="sidebar-list">
+        <CloseButton onClick={handleClose} white={"white"} />
           <li className="sidebar-item">
             <Link to="/" onClick={handleClose}>
               <p>Home</p>
@@ -44,12 +44,13 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
         <ul className="bottom-sidebar flexCenter">
           <li>
             <p>SOCIALS</p>
-            <span>X</span>
+            <span>X/Kenny.lj</span>
             <span>INSTAGRAM</span>
           </li>
           <li>
             <span>CONTACT</span>
-            <span>DISCOUNT</span>
+           
+            <span>oguntolakenny6@gmail.com</span>
           </li>
         </ul>
       </div>

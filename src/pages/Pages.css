@@ -86,11 +86,8 @@
 }
 
 .journal-article .read-more {
-  padding-bottom: 10px;
-}
-
-.arrowUp {
-  padding-top: 18px;
+  padding: 10px 0;
+  align-items: flex-start;
 }
 #checkoutForm {
   background-color: var(--bodyColor);
