@@ -21,7 +21,6 @@ export default function ShoeFangTwo() {
   } = useOutletContext();
 
   useLenis();
-  console.log("rendered");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [query, setQuery] = useState("");
 

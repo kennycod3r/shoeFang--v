@@ -47,18 +47,17 @@
     background-color: #3f77e7;
     height: 30px;
     width: 30px;
-    padding: 6px;
+   
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
   }
   
   .arrow-content {
     transform: rotate(-45deg);
     transition: transform 0.3s;
-    width: 30px;
+    min-width: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

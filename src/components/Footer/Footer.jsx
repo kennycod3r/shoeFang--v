@@ -78,6 +78,7 @@ export default function Footer() {
               {userEmail.subscribeMsg}
             </p>
             <input
+              id="email-id"
               placeholder="Enter Your Email Address"
               type="email"
               required

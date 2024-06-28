@@ -20,7 +20,7 @@ const AddBagComponent = ({
       newPrice,
       prevPrice,
       imageUrl: image,
-      imageId,
+      imageId: typeof imageId === 'number' ? imageId : Number(imageId),
     };
     handleBagData(newBagData);
     setBagged(true);
@@ -43,7 +43,7 @@ AddBagComponent.propTypes = {
   newPrice: PropTypes.string.isRequired,
   prevPrice: PropTypes.string,
   image: PropTypes.string.isRequired,
-  imageId: PropTypes.string.isRequired,
+  imageId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default AddBagComponent;

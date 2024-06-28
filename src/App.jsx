@@ -37,7 +37,6 @@ function App() {
     setBag((prev) => [...prev, newBagData]);
     const newprice = Number(newBagData.newPrice);
     setTotal((prev) => prev + newprice);
-    console.log(typeof newBagData.newPrice);
   }, []);
 
   if (isLoading) {

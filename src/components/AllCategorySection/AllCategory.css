@@ -30,7 +30,7 @@
 .flex-nike {
   width: 100%;
 }
-.flex-nike img{
+.flex-nike img {
   height: 30px;
   width: 30px;
   margin: 0 auto;
@@ -52,7 +52,7 @@
   border-radius: 5px;
   width: 100%;
   z-index: 3;
-  padding-bottom: 100%; 
+  padding-bottom: 100%;
 }
 
 .img-absolute-div .image {
@@ -124,11 +124,12 @@
   .category-section {
     grid-template-columns: 1fr 1fr;
     gap: 5px;
+    padding: 10px 6px;
   }
   .img-absolute-div {
     min-height: 15em;
   }
-  
+
   .shop-circle {
     width: 40px;
     height: 40px;

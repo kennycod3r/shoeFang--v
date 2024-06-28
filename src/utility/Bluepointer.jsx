@@ -9,7 +9,7 @@ const Bluepointer = () => {
             points="18 8 18 18 8 18"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             width="25px"
             height="25px"
           ></polyline>
@@ -18,9 +18,9 @@ const Bluepointer = () => {
             y1="18"
             x2="5"
             y2="5"
-            fill="none"
+            fill="#fff"
             stroke="#fff"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
           ></line>
         </svg>{" "}
       </div>

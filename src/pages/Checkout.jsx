@@ -20,7 +20,6 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Checkout Info:", formValues);
     setFormValues({
       address: "",
       zipCode: "",

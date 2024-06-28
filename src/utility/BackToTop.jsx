@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 const BackToTop = ({ lenis }) => {
-  console.log("BackToTop component rendered");
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = useCallback(() => {

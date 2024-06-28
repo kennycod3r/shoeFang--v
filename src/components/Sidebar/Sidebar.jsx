@@ -13,8 +13,11 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
   if (!navigationBar) return null;
 
   return createPortal(
-    <section className={`sidebar-wrapper ${isOpen ? "slideInLeft" : ""}`}>
-      <div className="sidebar">
+    <div
+      data-lenis-prevent
+      className={`sidebar-wrapper ${isOpen ? "slideInLeft" : ""}`}
+    >
+      <div className={`sidebar`}>
         <CloseButton onClick={handleClose} white={"white"} />
         <p className="menu">MENU</p>
         <ul className="sidebar-list">
@@ -29,11 +32,11 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
             </Link>
           </li>
           <li className="sidebar-item">
-          <Link to="/Sale" onClick={handleClose}>
+            <Link to="/Sale" onClick={handleClose}>
               <p>SALE</p>
             </Link>
           </li>
-          
+
           <li className="sidebar-item">
             <p>Shop</p>
           </li>
@@ -50,7 +53,7 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
           </li>
         </ul>
       </div>
-    </section>,
+    </div>,
     navigationBar
   );
 };

@@ -6,6 +6,7 @@ const SearchInput = ({ query, handleInputChange }) => {
   return (
     <div className="search-container">
       <input
+        id="search-id"
         type="text"
         placeholder="Search brand or names"
         className="search-input"
