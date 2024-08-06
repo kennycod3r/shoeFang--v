@@ -7,6 +7,7 @@ import Journal from "../pages/journal";
 import Checkout from "../pages/checkout";
 import Sale from "../pages/sale";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
