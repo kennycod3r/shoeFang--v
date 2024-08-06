@@ -2,10 +2,10 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../Error";
-import ShoeFangTwo from "../pages/ShoeFangTwo";
-import Journal from "../pages/Journal";
-import Checkout from "../pages/Checkout";
-import Sale from "../pages/Sale";
+import ShoeFangTwo from "../pages/shoefangTwo";
+import Journal from "../pages/journal";
+import Checkout from "../pages/checkout";
+import Sale from "../pages/sale";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: "/", element: <ShoeFangTwo /> },
       { path: "/journal", element: <Journal /> },
       { path: "/checkout", element: <Checkout /> },
-      { path: "/Sale", element: <Sale /> },
+      { path: "/sale", element: <Sale /> },
     ],
   },
 ]);

@@ -19,11 +19,11 @@ const HeadText = React.memo(({ handleBagOpen, handleSidebar, bagData }) => {
               <Link to="/">HOME</Link>
             </div>
             <div className="show-mobile">
-              <Link to="/Journal">JOURNAL</Link>
+              <Link to="/journal">JOURNAL</Link>
             </div>
 
             <div className="show-mobile">
-              <Link to="/Sale">SALE</Link>
+              <Link to="/sale">SALE</Link>
             </div>
             <div className="show-mobile">SHOP</div>
           </div>
