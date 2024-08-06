@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../Error";
-import ShoeFangTwo from "../pages/shoefangTwo";
+import ShoeFangTwo from "../pages/shoefangtwo";
 import Journal from "../pages/journal";
 import Checkout from "../pages/checkout";
 import Sale from "../pages/sale";
