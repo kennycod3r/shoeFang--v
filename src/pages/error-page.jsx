@@ -1,14 +1,13 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
-import ER from "./assets/errorrobot.svg";
-import "./index.css";
+import ER from "../assets/errorrobot.svg";
 import { Link } from "react-router-dom";
-import CloseButton from "./utility/CloseButton";
+import CloseButton from "../utility/CloseButton";
+import "../index.css";
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
-
   return (
     <div id="error-page">
       <div>
@@ -21,7 +20,6 @@ export default function ErrorPage() {
           <b>{error.statusText || error.message}</b>
         </p>
       </div>
-
       <div className="article">
         <Link to="/">
           <CloseButton className={"errorclose"} white={"white"} />

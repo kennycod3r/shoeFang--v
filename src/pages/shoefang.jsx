@@ -10,7 +10,7 @@ import BagItems from "../components/BagItems/BagItems";
 import AllCategoryCard from "../utility/AllCategoryCard";
 import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
 
-export default function ShoeFangTwo() {
+export default function ShoeFang() {
   const {
     bag,
     total,

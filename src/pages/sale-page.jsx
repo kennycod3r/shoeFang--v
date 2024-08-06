@@ -35,17 +35,15 @@ const Sale = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % salesData.length);
   };
-
   return (
     <>
       <Hero
         title={salesData[currentIndex].title}
         description={salesData[currentIndex].itemDescription}
-        linkUrl="/checkout"
+        linkUrl="/check-out"
         linkText="Proceed to Checkout"
         heroImageUrl={salesData[currentIndex].salesImg}
         itemPrice={salesData[currentIndex].itemPrice}

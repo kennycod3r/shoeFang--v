@@ -43,7 +43,7 @@ const BagItems = ({
             <p className="total-price">£{total}.00</p>
           </div>
           <button className="checkout-btn">
-            <Link to="/checkout" className="btn-link" onClick={handleBagOpen}>
+            <Link to="/check-out" className="btn-link" onClick={handleBagOpen}>
               CHECKOUT
             </Link>
           </button>

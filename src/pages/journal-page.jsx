@@ -1,4 +1,5 @@
 import React from "react";
+//import useLenis from "../components/hooks/UseLennis";
 import useLenis from "../components/hooks/UseLennis";
 import "./Pages.css";
 import clock from "../assets/clock.svg";
@@ -8,7 +9,6 @@ import Bluepointer from "../utility/Bluepointer";
 
 export default function Journal() {
   useLenis();
-
   const articles = [
     {
       title: "Jordan Tatum 2 Sidewalk Chalk",

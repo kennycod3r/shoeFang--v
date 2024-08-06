@@ -4,7 +4,6 @@ import { useOutletContext } from "react-router-dom";
 
 const Checkout = () => {
   const { bag, total } = useOutletContext();
-
   const [formValues, setFormValues] = useState({
     address: "",
     zipCode: "",
@@ -17,7 +16,6 @@ const Checkout = () => {
       [name]: value,
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormValues({

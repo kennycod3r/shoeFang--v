@@ -24,19 +24,13 @@ function App() {
   const handleBagOpen = useCallback(() => setBagOpen((prev) => !prev), []);
   const handleRemoveBagItem = useCallback((imageId, newItemPrice) => {
     setBag((prev) => prev.filter((item) => item.imageId !== imageId));
-
-    const newprice = Number(newBagData.newPrice);
-    setTotal((prev) => prev - newprice);
+    setTotal((prev) => prev - Number(newItemPrice));
   }, []);
 
-  const handleSidebar = useCallback(
-    () => setIsSidebarOpen((prev) => !prev),
-    []
-  );
+  const handleSidebar = useCallback(() => setIsSidebarOpen((prev) => !prev), []);
   const appHandleBag = useCallback((newBagData) => {
     setBag((prev) => [...prev, newBagData]);
-    const newprice = Number(newBagData.newPrice);
-    setTotal((prev) => prev + newprice);
+    setTotal((prev) => prev + Number(newBagData.newPrice));
   }, []);
 
   if (isLoading) {
@@ -61,7 +55,6 @@ function App() {
         bagData={bag}
         handleSidebar={handleSidebar}
       />
-
       <Sidebar handleSidebar={handleSidebar} isOpen={isSidebarOpen} />
       <Outlet
         context={{

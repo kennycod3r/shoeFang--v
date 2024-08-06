@@ -39,27 +39,37 @@ b {
 del {
   color: #7b7b7b;
 }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 html.lenis {
   height: auto;
 }
-html.has-scroll-smooth {
-  overflow: hidden;
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
+
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-  height: 100vh;
-}
 
+.w-editor .load-w {
+  display: none;
+}
 * {
   padding: 0;
   margin: 0;

@@ -27,12 +27,12 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
             </Link>
           </li>
           <li className="sidebar-item">
-            <Link to="/Journal" onClick={handleClose}>
+            <Link to="/journal-page" onClick={handleClose}>
               <p>Journal</p>
             </Link>
           </li>
           <li className="sidebar-item">
-            <Link to="/Sale" onClick={handleClose}>
+            <Link to="/sale-page" onClick={handleClose}>
               <p>SALE</p>
             </Link>
           </li>

@@ -1,23 +1,24 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
-import ErrorPage from "../Error";
+//import ErrorPage from "../ErrorPage";
 //import ShoeFangTwo from "../pages/shoefangtwo";
-import Journal from "../pages/journal";
-import Checkout from "../pages/checkout";
-import Sale from "../pages/sale";
 
-
+import ShoeFang from "../pages/shoefang";
+import Journal from "../pages/journal-page";
+import Sale from "../pages/sale-page";
+import Checkout from "../pages/check-out";
+import ErrorPage from "../pages/error-page";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      //{ path: "/", element: <ShoeFangTwo /> },
-      { path: "/journal", element: <Journal /> },
-      { path: "/checkout", element: <Checkout /> },
-      { path: "/sale", element: <Sale /> },
+      { path: "/", element: <ShoeFang /> },
+      { path: "/journal-page", element: <Journal /> },
+      { path: "/check-out", element: <Checkout /> },
+      { path: "/sale-page", element: <Sale /> },
     ],
   },
 ]);
