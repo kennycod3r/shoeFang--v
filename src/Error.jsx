@@ -21,11 +21,11 @@ export default function ErrorPage() {
           <b>{error.statusText || error.message}</b>
         </p>
       </div>
-      
+
       <div className="article">
-      <Link to="/">
-        <CloseButton className={"errorclose"} white={"white"}/>
-      </Link>
+        <Link to="/">
+          <CloseButton className={"errorclose"} white={"white"} />
+        </Link>
       </div>
     </div>
   );

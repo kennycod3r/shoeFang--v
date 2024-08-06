@@ -49,7 +49,6 @@ const Sidebar = ({ handleSidebar, isOpen }) => {
           </li>
           <li>
             <span>CONTACT</span>
-           
             <span>oguntolakenny6@gmail.com</span>
           </li>
         </ul>
