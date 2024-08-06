@@ -1,9 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
-//import ErrorPage from "../ErrorPage";
-//import ShoeFangTwo from "../pages/shoefangtwo";
-
 import ShoeFang from "../pages/shoefang";
 import Journal from "../pages/journal-page";
 import Sale from "../pages/sale-page";
