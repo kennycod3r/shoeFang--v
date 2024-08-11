@@ -518,7 +518,7 @@ a {
   color: inherit;
 }
 
-.cat-text-header {
+.cat-text-header, .border-top {
   padding-top: 1em;
   display: flex;
   border-bottom: 0.1px solid #ccc;
@@ -527,6 +527,13 @@ a {
   gap: 1em;
   justify-content: center;
   height: 70px;
+}
+
+.border-top{
+  border-top: 0.1px solid #ccc;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .cat-text-header .svg-con {
@@ -550,11 +557,11 @@ a {
   font-weight: 200;
   cursor: pointer;
   width: fit-content;
-  text-decoration: underline;
 }
 
 .underline:hover {
   color: #000000;
+  text-decoration: underline
 }
 img {
   width: 100%;

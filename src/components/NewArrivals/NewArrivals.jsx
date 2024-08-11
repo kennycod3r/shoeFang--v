@@ -1,9 +1,9 @@
 import React from "react";
 import greenNike from "../../assets/greenNike.svg";
-import AllCategoryCard from "../../utility/AllCategoryCard";
 import Hero from "../Hero/Hero";
 import Yeezyimg from "../../Img/yeezy.webp";
 import "../../index.css";
+import ProductDisplay from "../ProductDisplay/ProductDisplay";
 
 const NewArrivals = ({ data, appHandleBag }) => {
   const NewArrivalData = [
@@ -11,7 +11,7 @@ const NewArrivals = ({ data, appHandleBag }) => {
       title: "Addidas yeezy Re-release",
       itemPrice: 97,
       itemDescription:
-        "stay tuned for the re-relese limited pices of addidas original yeezys.",
+        "Stay tuned for the re-release of limited pieces of Adidas original Yeezys.",
       salesImg: Yeezyimg,
       imageId: 700,
       backgroundImage:
@@ -21,32 +21,12 @@ const NewArrivals = ({ data, appHandleBag }) => {
 
   return (
     <div className="newarrivals">
-      <div className="cat-text-header">
-        <div className="svg-con">
-          <img src={greenNike} alt="svgicon" />
-        </div>
-        <div>
-          {" "}
-          <h1 className="headtext-small bolderh2">NEW ARRIVALS (NIKE)</h1>
-        </div>
-      </div>
-      <div className="category-section">
-        {data.map(({ img, title, newPrice, prevPrice, id, description }) => (
-          <AllCategoryCard
-            key={id}
-            image={img}
-            title={title}
-            newPrice={newPrice}
-            prevPrice={prevPrice}
-            imageId={id}
-            description={description}
-            appHandleBag={appHandleBag}
-          />
-        ))}
-      </div>
-      <div className="w100 flexCenter taC">
-        <h3 className="small underline">VIEW ALL</h3>
-      </div>
+      <ProductDisplay
+        title="NEW ARRIVALS (NIKE)"
+        icon={greenNike}
+        data={data}
+        appHandleBag={appHandleBag}
+      />
       <Hero
         title={NewArrivalData[0].title}
         description={NewArrivalData[0].itemDescription}

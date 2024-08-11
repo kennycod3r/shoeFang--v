@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AllCategoryCard from "../../utility/AllCategoryCard";
-import '../../index.css';
+import "../../index.css";
 
 const ProductDisplay = ({ title, icon, data, appHandleBag }) => {
   return (
@@ -26,6 +27,11 @@ const ProductDisplay = ({ title, icon, data, appHandleBag }) => {
             appHandleBag={appHandleBag}
           />
         ))}
+      </div>
+      <div className="cat-text-header border-top">
+        <Link to="/shop">
+          <p className="small underline">SHOP ALL</p>
+        </Link>
       </div>
     </section>
   );
