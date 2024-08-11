@@ -1,7 +1,16 @@
+import Shoeimg1 from "../../src/Img/airforce1.webp";
+import Shoeimg2 from "../../src/Img/Airmax97.webp";
+import Shoeimg3 from "../../src/Img/AURORAbrown.webp";
+import Shoeimg4 from "../../src/Img/Dxx.webp";
+import Shoeimg5 from "../../src/Img/Air Flight Lite.webp";
+import Shoeimg6 from "../../src/Img/Air Huarache.webp";
+import Shoeimg7 from "../../src/Img/airmax1.webp";
+import Shoeimg8 from "../../src/Img/AURORA.webp";
+
 const data = [
   {
     title: "Air Force 1 '07 (M)",
-    img: "src/Img/airforce1.webp",
+    img: Shoeimg1,
     secondary: "src/Img/airf2.webp",
     prevPrice: "85",
     newPrice: "80",
@@ -12,7 +21,7 @@ const data = [
   },
   {
     title: "Air Max 97 (M)",
-    img: "src/Img/Airmax97.webp",
+    img: Shoeimg2,
     prevPrice: "85",
     newPrice: "120",
     company: "Nike",
@@ -22,7 +31,7 @@ const data = [
   },
   {
     title: "Nike Air Max 97 Ewt",
-    img: "src/Img/AURORAbrown.webp",
+    img: Shoeimg3,
     secondary: "src/Img/AURORAbrown2.webp",
     prevPrice: "85",
     newPrice: "120",
@@ -33,7 +42,7 @@ const data = [
   },
   {
     title: "Waffle One Ltr (M)",
-    img: "src/Img/Dxx.webp",
+    img: Shoeimg4,
     prevPrice: "85",
     newPrice: "80",
     company: "Nike",
@@ -41,10 +50,9 @@ const data = [
     id: 158,
     category: "sneakers",
   },
-
   {
     title: "Air Flight Lite (M)",
-    img: "src/Img/Air Flight Lite.webp",
+    img: Shoeimg5,
     secondary: "src/Img/Air Flight2.webp",
     prevPrice: "185",
     newPrice: "130",
@@ -55,7 +63,7 @@ const data = [
   },
   {
     title: "Air Huarache",
-    img: "src/Img/Air Huarache.webp",
+    img: Shoeimg6,
     secondary: "src/Img/Air Huarache2.webp",
     prevPrice: "105",
     newPrice: "100",
@@ -66,7 +74,7 @@ const data = [
   },
   {
     title: "Air Max 2 (M)",
-    img: "src/Img/airmax1.webp",
+    img: Shoeimg7,
     secondary: "src/Img/airmax2.webp",
     prevPrice: "125",
     newPrice: "90",
@@ -77,7 +85,7 @@ const data = [
   },
   {
     title: "Nike AURORA (M)",
-    img: "src/Img/AURORA.webp",
+    img: Shoeimg8,
     secondary: "src/Img/AURORA2.webp",
     prevPrice: "105",
     newPrice: "120",
