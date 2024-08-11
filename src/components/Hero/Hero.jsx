@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from "react";
+import "../../App.css";
 import { Link } from "react-router-dom";
 import { BsBellFill, BsFillBellSlashFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import AddBagComponent from "../../utility/AddBagComponent";
 import nikeLogoImg from "../../Img/nikeLogoImg.jpg";
 import Bluepointer from "../../utility/Bluepointer";
-import "../../App.css";
 
 const Hero = React.memo(
   ({
@@ -32,7 +32,7 @@ const Hero = React.memo(
 
     // Fallback to default values if props are not provided
     const defaultBackgroundImage = backgroundImage || nikeLogoImg;
-    const defaultTitle = title || "Air Jordan 6 'Reverse Oreo'";
+    const defaultTitle = title || "Air Jordan 6 'Reverse Oreo'.";
     const defaultDescription = Array.isArray(description)
       ? description
       : [
@@ -40,7 +40,7 @@ const Hero = React.memo(
           "Be sure to grab your pair on release date for retail here!",
         ];
     const defaultLinkText = linkText || "Read more in article";
-    const defaultLinkUrl = linkUrl || "/journal";
+    const defaultLinkUrl = linkUrl || "/journal-page";
     const defaultHeroImageUrl =
       heroImageUrl ||
       "https://pbs.twimg.com/media/GODoPrdW4AEqgbT?format=jpg&name=large";
@@ -53,14 +53,16 @@ const Hero = React.memo(
       >
         <div className="hero-inner-section">
           <div className="hero-sales-text">
-            <h2 className="hero-headtext">{defaultTitle}</h2>
-           {handleNext && <p className="hero-price headtext-small">{defaultItemPrice}</p>}
+            <h2 className="hero-headtext ">{defaultTitle}</h2>
+            {handleNext && (
+              <p className="hero-price headtext-small">{defaultItemPrice}</p>
+            )}
             <div className="aligned-paragraphs">
               {defaultDescription.map((text, index) => (
                 <p key={index}>{text}</p>
               ))}
             </div>
-            <Link to={defaultLinkUrl} className=" link-hero flexBase">
+            <Link to={defaultLinkUrl} className=" link-hero">
               <div className="article">
                 <p>{defaultLinkText}</p>
                 <Bluepointer />
@@ -101,17 +103,18 @@ const Hero = React.memo(
                   onClick={toggleReminder}
                   tabIndex={0}
                   role="button"
-                  aria-pressed={reminder}
-                  aria-label="Set or cancel reminder"
+                  aria-label="Set reminder"
                 >
                   {reminder ? (
-                    <BsBellFill className="bag-icon" color="blue" />
+                    <BsBellFill className="bell-icon" />
                   ) : (
-                    <BsFillBellSlashFill />
+                    <BsFillBellSlashFill className="bell-icon" />
                   )}
                 </div>
                 <div>
-                  <p className="reminderp">{!reminder ?`Set Reminder?`: "Cancel Reminder?"}</p>
+                  <p className="headtext-small white-Text">
+                    {reminder ? "CANCEL REMINDER" : "SET REMINDER"}
+                  </p>
                 </div>
               </div>
             )}
@@ -132,11 +135,10 @@ Hero.propTypes = {
   linkText: PropTypes.string,
   linkUrl: PropTypes.string,
   heroImageUrl: PropTypes.string,
-  itemPrice: PropTypes.string,
+  itemPrice: PropTypes.number,
   handleNext: PropTypes.func,
-  appHandleBag: PropTypes.func,
-  imageId: PropTypes.string,
-  sales: PropTypes.string,
+  imageId: PropTypes.number,
+  salesImg: PropTypes.string,
 };
 
 export default Hero;

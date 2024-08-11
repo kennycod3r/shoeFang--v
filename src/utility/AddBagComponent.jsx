@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { BsCartCheckFill } from "react-icons/bs";
 import PropTypes from "prop-types";
 import cartEmpty from "../assets/cartempty.svg";
+import '../index.css';
 
 const AddBagComponent = ({
   handleBagData,

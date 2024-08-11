@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../pages/Pages.css';
 
 const PaymentForm = () => {
   const [paymentValues, setPaymentValues] = useState({

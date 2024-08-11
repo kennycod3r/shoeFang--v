@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import PaymentForm from "../utility/PaymentForm";
 import { useOutletContext } from "react-router-dom";
+import PaymentForm from "../utility/PaymentForm";
+import PaymentFooter from "../components/paymentfooter/PaymentFooter";
+import Sponsor from "../components/Sponsors/Sponsor";
+import './Pages.css';
+
 
 const Checkout = () => {
-  const { bag, total } = useOutletContext();
+  const { bag, total, handleRemoveBagItem } = useOutletContext();
   const [formValues, setFormValues] = useState({
     address: "",
     zipCode: "",
@@ -16,8 +20,10 @@ const Checkout = () => {
       [name]: value,
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle form submission logic
     setFormValues({
       address: "",
       zipCode: "",
@@ -28,17 +34,22 @@ const Checkout = () => {
     <>
       <div id="checkoutForm">
         <div className="checkout-form">
-          <h3 className="headtext-small">Checkout</h3>
-          <p className="light-grey small">home/cart/checkout</p>
+          <h3 className="shoe-title2">Checkout</h3>
+          <p className="light-grey small shoe-title">home/cart/checkout</p>
           <div className="checkout-form-inner">
             <div className="checkout-col">
               {bag.map((item) => (
                 <div key={item.imageId} className="checkout-card">
                   <div className="checkout-card-details">
-                    <h3 className="headtext-small">{item.title}</h3>
+                    <h3 className="headtext-small shoe-title2">{item.title}</h3>
                     <p>Size: {item.size}</p>
                     <p>QTY: {item.qty}</p>
-                    <p className="light-grey small">Details</p>
+                    <p 
+                      onClick={() => handleRemoveBagItem(item.imageId, item.newPrice)} 
+                      className="light-grey small underline"
+                    >
+                      Remove
+                    </p>
                   </div>
                   <div>
                     <img src={item.imageUrl} alt={item.title} />
@@ -49,7 +60,7 @@ const Checkout = () => {
             <div className="checkout-col">
               <ul className="white-overlay">
                 <li>
-                  <h3>TOTAL</h3>
+                  <h3 className="shoe-title2 small">TOTAL</h3>
                   <p className="light-grey">included delivery charge *$40</p>
                 </li>
                 {bag.map((item) => (
@@ -98,6 +109,8 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      <Sponsor />
+      <PaymentFooter />
     </>
   );
 };

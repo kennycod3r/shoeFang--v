@@ -1,6 +1,7 @@
 import React from "react";
 import nikelogo2 from "../../assets/nikelogo2.svg";
 import adidasSvg from "../../assets/adidas2.svg";
+import '../../index.css';
 
 const Sponsor = React.memo(() => {
   const sponsors = [
@@ -32,17 +33,6 @@ const Sponsor = React.memo(() => {
             loading="lazy"
           />
         ))}
-      </div>
-
-      <div className="flex-nike">
-        <div>
-          <img
-            className="flexCenter sponsor"
-            src={nikelogo2}
-            alt="Nike"
-            loading="lazy"
-          />
-        </div>
       </div>
     </>
   );

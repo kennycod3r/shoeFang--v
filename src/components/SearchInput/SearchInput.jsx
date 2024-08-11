@@ -1,6 +1,5 @@
-import "./SearchInput.css";
-import React from "react";
-import PropTypes from "prop-types";
+import { FaSearch } from 'react-icons/fa';
+import './SearchInput.css';
 
 const SearchInput = ({ query, handleInputChange }) => {
   return (
@@ -13,13 +12,9 @@ const SearchInput = ({ query, handleInputChange }) => {
         value={query}
         onChange={handleInputChange}
       />
+      <FaSearch className="search-icon" color='grey' />
     </div>
   );
-};
-
-SearchInput.propTypes = {
-  query: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default SearchInput;

@@ -1,5 +1,92 @@
 const data = [
   {
+    title: "Air Force 1 '07 (M)",
+    img: "src/Img/airforce1.webp",
+    secondary: "src/Img/airf2.webp",
+    prevPrice: "85",
+    newPrice: "80",
+    company: "Nike",
+    id: 128,
+    color: "white",
+    category: "sneakers",
+  },
+  {
+    title: "Air Max 97 (M)",
+    img: "src/Img/Airmax97.webp",
+    prevPrice: "85",
+    newPrice: "120",
+    company: "Nike",
+    color: "blue",
+    id: 138,
+    category: "sneakers",
+  },
+  {
+    title: "Nike Air Max 97 Ewt",
+    img: "src/Img/AURORAbrown.webp",
+    secondary: "src/Img/AURORAbrown2.webp",
+    prevPrice: "85",
+    newPrice: "120",
+    company: "Nike",
+    color: "green",
+    id: 148,
+    category: "sneakers",
+  },
+  {
+    title: "Waffle One Ltr (M)",
+    img: "src/Img/Dxx.webp",
+    prevPrice: "85",
+    newPrice: "80",
+    company: "Nike",
+    color: "white",
+    id: 158,
+    category: "sneakers",
+  },
+
+  {
+    title: "Air Flight Lite (M)",
+    img: "src/Img/Air Flight Lite.webp",
+    secondary: "src/Img/Air Flight2.webp",
+    prevPrice: "185",
+    newPrice: "130",
+    company: "Nike",
+    id: 168,
+    color: "white",
+    category: "sneakers",
+  },
+  {
+    title: "Air Huarache",
+    img: "src/Img/Air Huarache.webp",
+    secondary: "src/Img/Air Huarache2.webp",
+    prevPrice: "105",
+    newPrice: "100",
+    company: "Nike",
+    id: 178,
+    color: "black",
+    category: "sneakers",
+  },
+  {
+    title: "Air Max 2 (M)",
+    img: "src/Img/airmax1.webp",
+    secondary: "src/Img/airmax2.webp",
+    prevPrice: "125",
+    newPrice: "90",
+    company: "Nike",
+    color: "black",
+    id: 188,
+    category: "sneakers",
+  },
+  {
+    title: "Nike AURORA (M)",
+    img: "src/Img/AURORA.webp",
+    secondary: "src/Img/AURORA2.webp",
+    prevPrice: "105",
+    newPrice: "120",
+    company: "Nike",
+    color: "black",
+    id: 218,
+    category: "sneakers",
+  },
+  {
     id: 17,
     img: "https://images.asos-media.com/products/on-the-roger-advantage-trainers-in-all-white/24421180-1-allwhite?$n_640w$&wid=513&fit=constrain",
     title: "Nike Air Monarch IV",
@@ -10,15 +97,16 @@ const data = [
     category: "sneakers",
   },
   {
-    id: 18,
-    img: "https://images.asos-media.com/products/adidas-originals-adimatic-gum-sole-trainers-in-black-and-white/203695013-1-black?$n_640w$&wid=634&fit=constrain",
-    title: "Adidas adimatic gum",
+    id: 22,
+    img: "https://images.asos-media.com/products/adidas-originals-rivalry-low-trainers-in-white-and-green/205759967-1-multi?$n_640w$&wid=634&fit=constrain",
+    title: "adidas Rivalry Low",
     prevPrice: "115",
-    newPrice: "90",
+    newPrice: "100",
     company: "Adidas",
-    color: "black",
-    category: "flats",
+    color: "white",
+    category: "sneakers",
   },
+
   {
     id: 19,
     img: "https://images.asos-media.com/products/adidas-originals-samba-og-trainers-in-black/205091962-1-black?$n_640w$&wid=634&fit=constrain",
@@ -49,16 +137,7 @@ const data = [
     color: "blue",
     category: "sneakers",
   },
-  {
-    id: 22,
-    img: "https://images.asos-media.com/products/adidas-originals-rivalry-low-trainers-in-white-and-green/205759967-1-multi?$n_640w$&wid=634&fit=constrain",
-    title: "adidas Rivalry Low",
-    prevPrice: "115",
-    newPrice: "100",
-    company: "Adidas",
-    color: "white",
-    category: "sneakers",
-  },
+
   {
     id: 23,
     img: "https://images.asos-media.com/products/vans-sk8-hi-trainers-in-green-suede/203590902-1-khaki?$n_480w$&wid=476&fit=constrain",
@@ -167,6 +246,16 @@ const data = [
     newPrice: "69",
     company: "Vans",
     color: "red",
+    category: "flats",
+  },
+  {
+    id: 18,
+    img: "https://images.asos-media.com/products/adidas-originals-adimatic-gum-sole-trainers-in-black-and-white/203695013-1-black?$n_640w$&wid=634&fit=constrain",
+    title: "Adidas adimatic gum",
+    prevPrice: "115",
+    newPrice: "90",
+    company: "Adidas",
+    color: "black",
     category: "flats",
   },
   {
@@ -280,5 +369,27 @@ const data = [
     category: "sneakers",
   },
 ];
+const keys = [
+  "title",
+  "img",
+  "secondary",
+  "prevPrice",
+  "newPrice",
+  "company",
+  "id",
+  "color",
+  "category",
+];
 
-export default data;
+const formatData = (data) => {
+  return data.map((item) => {
+    const formattedItem = {};
+    keys.forEach((key) => {
+      formattedItem[key] = item.hasOwnProperty(key) ? item[key] : null;
+    });
+    return formattedItem;
+  });
+};
+
+const formattedData = formatData(data);
+export default formattedData;

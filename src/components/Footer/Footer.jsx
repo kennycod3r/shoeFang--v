@@ -59,6 +59,11 @@ export default function Footer() {
           </ul>
         </div>
         <div className="footer--text footer-col">
+          <p>
+            Subscribe for 10% OFF
+          </p>
+          <p className="job-title small">When you first sign up for our newsletter you
+            will receive a 10% OFF code to use on your order.</p>
           <div>
             <h2 className="headtext-small fhs">
               Subscribe and Receive

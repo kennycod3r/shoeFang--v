@@ -1,5 +1,5 @@
 import React from "react";
-
+import '../components/Recommended/Recommended.css';
 const Input = ({ handleChange, value, title, name, color }) => {
   return (
     <label className="sidebar-label-container">

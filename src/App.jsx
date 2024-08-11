@@ -6,6 +6,7 @@ import useLenis from "./components/hooks/UseLennis";
 import Sidebar from "./components/Sidebar/Sidebar";
 import BagItems from "./components/BagItems/BagItems";
 import HeadText from "./components/HeadText/HeadText";
+import './index.css';
 
 function App() {
   useLenis();
@@ -22,12 +23,14 @@ function App() {
   }, []);
 
   const handleBagOpen = useCallback(() => setBagOpen((prev) => !prev), []);
+  
   const handleRemoveBagItem = useCallback((imageId, newItemPrice) => {
     setBag((prev) => prev.filter((item) => item.imageId !== imageId));
     setTotal((prev) => prev - Number(newItemPrice));
   }, []);
 
   const handleSidebar = useCallback(() => setIsSidebarOpen((prev) => !prev), []);
+  
   const appHandleBag = useCallback((newBagData) => {
     setBag((prev) => [...prev, newBagData]);
     setTotal((prev) => prev + Number(newBagData.newPrice));

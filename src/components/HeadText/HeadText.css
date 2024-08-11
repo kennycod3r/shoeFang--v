@@ -48,12 +48,6 @@
   justify-content: center;
 }
 
-.nav-icons {
-  width: 1.5rem;
-  height: 1.3rem;
-  color: var(--primaryGreen);
-}
-
 #sidebar {
   color: var(--primaryGreen);
 }

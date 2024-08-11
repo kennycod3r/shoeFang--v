@@ -2,25 +2,23 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import Discount from "./Discount";
 import AddBagComponent from "./AddBagComponent";
+import "../index.css";
 
 const AllCategoryCard = memo(
   ({
     image,
-    description,
+    description = "",
     title,
     newPrice,
-    prevPrice,
+    prevPrice = 40,
     appHandleBag,
     imageId,
   }) => {
     return (
       <section className="ac-card">
         <div className="ac-item-wrapper">
-          <div
-            className="img-absolute-div"
-            style={{ backgroundImage: `url(${image})` }}
-          >
-            <img src={image} alt={title} className="image" />
+          <div className="img-absolute-div">
+            <img src={image} alt={title} className="image" loading="lazy" />
             <Discount newPrice={newPrice} prevPrice={prevPrice} />
             <AddBagComponent
               handleBagData={appHandleBag}
@@ -33,8 +31,8 @@ const AllCategoryCard = memo(
           </div>
         </div>
         <div className="ac-card-details">
-          <h3>{title}</h3>
-          <p className={`small ${description ? "light-grey" : ""}`}>
+          <h3 className="shoe-title">{title}</h3>
+          <p className={`small shoe-title ${description ? "light-grey" : ""}`}>
             {description ? (
               description
             ) : (
@@ -49,5 +47,14 @@ const AllCategoryCard = memo(
   }
 );
 
+AllCategoryCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  newPrice: PropTypes.string.isRequired,
+  prevPrice: PropTypes.string,
+  appHandleBag: PropTypes.func.isRequired,
+  imageId: PropTypes.number,
+};
 
 export default AllCategoryCard;

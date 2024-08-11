@@ -1,16 +1,18 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, {useMemo } from "react";
+import '../index.css';
 import { useOutletContext } from "react-router-dom";
 import useLenis from "../components/hooks/UseLennis";
-import Products from "../components/Products/Products";
-import Recommended from "../components/Recommended/Recommended";
 import Hero from "../components/Hero/Hero";
 import storeData from "../Data/Data";
 import HeroTwo from "../components/HeroTwo/HeroTwo";
 import BagItems from "../components/BagItems/BagItems";
-import AllCategoryCard from "../utility/AllCategoryCard";
-import AllCategorySection from "../components/AllCategorySection/AllCategorySection";
+import NewArrivals from "../components/NewArrivals/NewArrivals";
+import AdidasSection from "../components/Adidas/AdidasSection";
+import PaymentFooter from "../components/paymentfooter/PaymentFooter";
+import Sponsor from "../components/Sponsors/Sponsor";
 
 export default function ShoeFang() {
+  useLenis();
   const {
     bag,
     total,
@@ -20,69 +22,19 @@ export default function ShoeFang() {
     bagOpen,
   } = useOutletContext();
 
-  useLenis();
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [query, setQuery] = useState("");
-
-  const handleInputChange = useCallback((event) => {
-    setQuery(event.target.value);
+  const adidasArray = useMemo(() => {
+    return storeData.filter((item) => item.company === "Adidas");
   }, []);
-
-  const handleRadioChange = useCallback((event) => {
-    setSelectedCategory(event.target.value);
-  }, []);
-
-  const handleClick = useCallback((event) => {
-    setSelectedCategory(event.target.value);
-  }, []);
-
-  const filteredItems = useMemo(() => {
-    return storeData.filter((storeItem) =>
-      storeItem.title.toLowerCase().includes(query.toLowerCase())
-    );
-  }, [query]);
-
-  const filteredData = useMemo(() => {
-    let filteredStoreData = storeData;
-
-    if (query) {
-      filteredStoreData = filteredItems;
-    }
-
-    if (selectedCategory) {
-      filteredStoreData = filteredStoreData.filter(
-        ({ color, company, title }) =>
-          color === selectedCategory ||
-          company === selectedCategory ||
-          title === selectedCategory
-      );
-    }
-
-    return filteredStoreData.map(({ img, title, newPrice, prevPrice, id }) => (
-      <AllCategoryCard
-        key={id}
-        image={img}
-        title={title}
-        newPrice={newPrice}
-        prevPrice={prevPrice}
-        imageId={id}
-        appHandleBag={appHandleBag}
-      />
-    ));
-  }, [filteredItems, selectedCategory, query, appHandleBag]);
 
   return (
     <div id="detail">
       <section className={`body-section ${bagOpen ? "no-scroll" : ""}`}>
         <Hero />
-        <Recommended
-          handleClick={handleClick}
-          query={query}
-          handleChange={handleRadioChange}
-          handleInputChange={handleInputChange}
+        <NewArrivals data={storeData.slice(0, 8)} appHandleBag={appHandleBag} />
+        <AdidasSection
+          data={adidasArray.slice(0, 4)}
+          appHandleBag={appHandleBag}
         />
-        <Products result={filteredData} />
-
         <BagItems
           total={total}
           bagData={bag}
@@ -90,9 +42,9 @@ export default function ShoeFang() {
           handleBagOpen={handleBagOpen}
           handleRemoveBagItem={handleRemoveBagItem}
         />
-
         <HeroTwo />
-        <AllCategorySection appHandleBag={appHandleBag} />
+        <Sponsor />
+        <PaymentFooter />
       </section>
     </div>
   );

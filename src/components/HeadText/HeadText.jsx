@@ -25,7 +25,9 @@ const HeadText = React.memo(({ handleBagOpen, handleSidebar, bagData }) => {
             <div className="show-mobile">
               <Link to="/sale-page">SALE</Link>
             </div>
-            <div className="show-mobile">SHOP</div>
+            <div className="show-mobile">
+              <Link to="/shop">SHOP</Link>
+            </div>
           </div>
 
           <div className="flexCenter div-two">

@@ -1,4 +1,5 @@
 import React from "react";
+import '../components/Sidebar/Sidebar.css';
 
 const CloseButton = ({ onClick, white, className }) => (
   <div
